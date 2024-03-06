@@ -1,0 +1,791 @@
+.hitButton {
+  position: absolute; /* Use 'fixed' if you want the button to stay in the same place even when scrolling */
+  top:85%; /* Adjust to place the button anywhere vertically */
+  left: 46%; /* Adjust to place the button anywhere horizontally */
+  transform: translate(-50%, -50%); /* Center the button based on its own size */
+  width: 100px; /* Diameter of the circle */
+  height: 100px; /* Diameter of the circle */
+  border-radius: 50%; /* Make the button circular */
+  border: 1px solid #a93a3a; /* Optional: border for the button */
+  background-color: #be4444; /* Optional: background color of the button */
+  text-align: center; /* Align the text inside the button */
+  line-height: 10px; /* Center the text vertically */
+  cursor: pointer; /* Change mouse cursor to pointer when hovering over the button */
+  font-size: 20px;
+}
+
+/* Optional: Add hover effect */
+.hitButton:hover {
+  background-color: #9a1f1f;
+
+}
+.standButton {
+  position: absolute; /* Use 'fixed' if you want the button to stay in the same place even when scrolling */
+  top: 85%; /* Adjust to place the button anywhere vertically */
+  left: 54%; /* Adjust to place the button anywhere horizontally */
+  transform: translate(-50%, -50%); /* Center the button based on its own size */
+  width: 100px; /* Diameter of the circle */
+  height: 100px; /* Diameter of the circle */
+  border-radius: 50%; /* Make the button circular */
+  border: 1px solid #717dc4; /* Optional: border for the button */
+  background-color: #3f57de; /* Optional: background color of the button */
+  text-align: center; /* Align the text inside the button */
+  line-height: 10px; /* Center the text vertically */
+  cursor: pointer; /* Change mouse cursor to pointer when hovering over the button */
+  font-size: 20px;
+}
+
+/* Optional: Add hover effect */
+.standButton:hover {
+  background-color: #3f429f;
+}
+
+.dubbleButton {
+  position: absolute; /* Use 'fixed' if you want the button to stay in the same place even when scrolling */
+  top: 80%; /* Adjust to place the button anywhere vertically */
+  left: 40%; /* Adjust to place the button anywhere horizontally */
+  transform: translate(-50%, -50%); /* Center the button based on its own size */
+  width: 100px; /* Diameter of the circle */
+  height: 100px; /* Diameter of the circle */
+  border-radius: 50%; /* Make the button circular */
+  border: 1px solid #63b167; /* Optional: border for the button */
+  background-color: #56c667; /* Optional: background color of the button */
+  text-align: center; /* Align the text inside the button */
+  line-height: 10px; /* Center the text vertically */
+  cursor: pointer; /* Change mouse cursor to pointer when hovering over the button */
+  font-size: 20px;
+}
+
+/* Optional: Add hover effect */
+.dubbleButton:hover {
+  background-color: #4d9a58;
+}
+
+.splitButton {
+  position: absolute; /* Use 'fixed' if you want the button to stay in the same place even when scrolling */
+  top:80%; /* Adjust to place the button anywhere vertically */
+  left: 60%; /* Adjust to place the button anywhere horizontally */
+  transform: translate(-50%, -50%); /* Center the button based on its own size */
+  width: 100px; /* Diameter of the circle */
+  height: 100px; /* Diameter of the circle */
+  border-radius: 50%; /* Make the button circular */
+  border: 1px solid #bbd17d; /* Optional: border for the button */
+  background-color: #e5d955; /* Optional: background color of the button */
+  text-align: center; /* Align the text inside the button */
+  line-height: 10px; /* Center the text vertically */
+  cursor: pointer; /* Change mouse cursor to pointer when hovering over the button */
+  font-size: 20px;
+}
+
+/* Optional: Add hover effect */
+.splitButton:hover {
+  background-color: #a9a71d;
+}
+.surrenderButton {
+  position: absolute; /* Use 'fixed' if you want the button to stay in the same place even when scrolling */
+  top: 78%; /* Adjust to place the button anywhere vertically */
+  left: 50%; /* Adjust to place the button anywhere horizontally */
+  transform: translate(-50%, -50%); /* Center the button based on its own size */
+  width: 100px; /* Diameter of the circle */
+  height: 23px; /* Diameter of the circle */
+  border-radius: 20px; /* Make the button circular */
+  border: 1px solid #76c6aa; /* Optional: border for the button */
+  background-color: #4b96d8; /* Optional: background color of the button */
+  text-align: center; /* Align the text inside the button */
+  line-height: 10px; /* Center the text vertically */
+  cursor: pointer; /* Change mouse cursor to pointer when hovering over the button */
+  font-size: 20px;
+}
+
+/* Optional: Add hover effect */
+.surrenderButton:hover {
+  background-color: #59c7d6;
+}
+
+
+.card-imageX {
+  display: block;
+  margin-left: 45%;
+  margin-top: 24%;
+}
+
+.container {
+  position: relative;
+  left: 0%;
+}
+
+.dealer-container {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  justify-content: center;
+  display: flex;
+  height: 200px;  
+  transform: rotate(180deg) translateX(50%);;
+  
+}
+
+.test-button {
+  position: absolute; /* Use 'fixed' if you want the button to stay in the same place even when scrolling */
+  top: 78%; /* Adjust to place the button anywhere vertically */
+  left: 30%; /* Adjust to place the button anywhere horizontally */
+  transform: translate(-50%, -50%); /* Center the button based on its own size */
+  width: 100px; /* Diameter of the circle */
+  height: 23px; /* Diameter of the circle */
+  border-radius: 20px; /* Make the button circular */
+  border: 1px solid #0c9c6a; /* Optional: border for the button */
+  background-color: #4b96d8; /* Optional: background color of the button */
+  text-align: center; /* Align the text inside the button */
+  line-height: 10px; /* Center the text vertically */
+  cursor: pointer; /* Change mouse cursor to pointer when hovering over the button */
+  font-size: 20px;
+}
+
+/* Optional: Add hover effect */
+.test-button:hover {
+  background-color: #59c7d6;
+}
+
+.popup {
+  position: absolute; /* Fixed positioning to make it stay in place even when scrolling */
+  top: 0%;
+  left: 0%;
+
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  
+}
+
+.popup-content {
+  position: relative;
+  padding: 80px 100px;
+  background-color: rgba(236, 117, 77, 0.8);
+  border-radius: 30px; /* Optional: Rounded corners for the popup box */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Box shadow for a subtle depth effect */
+  
+}
+
+#goButton {
+  position: absolute;
+  transform: translate(-50%, -50%); /* Center the button based on its own size */
+  justify-content: center; /* Center horizontally */
+  width: 60%;
+  
+  top: 55%;
+
+  padding: 10px 0px; /* Padding inside the button for spacing */
+  font-size: 16px; /* Font size for the button text */
+  cursor: pointer; /* Change mouse cursor to pointer when hovering over the button */
+  background-color: rgb(219, 60, 60);
+  
+}
+#handSelector {
+  position: absolute;
+  transform: translate(-50%, -50%); /* Center the button based on its own size */
+
+  justify-content: center;
+  top: 84%;
+  width: 70%;
+  border-radius: 6px;
+  padding: 1px 10px; /* Padding inside the button for spacing */
+  font-size: 16px; /* Font size for the button text */
+  cursor: pointer; /* Change mouse cursor to pointer when hovering over the button */
+  background-color: lightblue
+}
+
+#result {
+  position: absolute;
+  
+  transform: translate(-50%, -50%);
+  top: -30%;
+  left: 50%;
+  white-space: nowrap;
+  font-size: 30px;
+  color: rgb(224, 34, 34);
+}
+
+
+#buttonContainer {
+  top: 25%;
+  width: 100%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  
+  
+}
+
+#bankroll {
+  position: absolute;
+  left: 400px;
+  top: 30px;
+  font-size: 10;
+  font-weight: bold;
+}
+
+#shoe {
+  position: absolute;
+  left: 400px;
+  top: 60px;
+  font-size: 10;
+  font-weight: bold;
+}
+#shoeButt {
+  position: absolute;
+  left:370px;
+  top: 78px;
+  height: 17px;
+  width: 17px;
+  border-radius: 30px;
+}
+#runningCount {
+  position: absolute;
+  left: 400px;
+  top: 90px;
+  font-size: 10;
+  font-weight: bold;
+}
+#runningButt {
+  position: absolute;
+  left:370px;
+  top: 108px;
+  height: 17px;
+  width: 17px;
+  border-radius: 30px;
+}
+#trueCount {
+  position: absolute;
+  left: 400px;
+  top: 120px;
+  font-size: 10;
+  font-weight: bold;
+}
+#trueButt {
+  position: absolute;
+  left:370px;
+  top: 138px;
+  height: 17px;
+  width: 17px;
+  border-radius: 30px;
+}
+
+
+#shoeCounter {
+  position: absolute;
+  left: 550px;
+  top: 250px;
+  height: 200px;
+  padding: 0px;
+  width: 50px;
+  border: 5px solid;
+  border-color: black;
+  background-color: blue;
+}
+#bar {
+  position: absolute;
+  left: 555px;
+  top: 255px;
+  
+  
+  width: 50px;
+  background-color:  rgb(108, 176, 199);
+}
+#barText {
+  position: absolute;
+  left: 500px;
+  top: 230px;
+  font-size: 15px;
+}
+
+
+:root {
+  --move-to-x: 200px; /* Default values */
+  --move-to-y: 200px;
+}
+
+#movingEntity {
+  width: 120px;
+  height: 180px;
+  transform: rotate(90deg);
+  position: absolute;
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
+
+@keyframes moveAndDisappear {
+  0% {
+    top: 200px;
+    left: 1300px;
+    opacity: 1;
+  }
+  100% {
+    top: var(--move-to-y);
+    left: var(--move-to-x);
+    opacity: 0;
+  }
+}
+
+@keyframes cardMove {
+  0% {
+
+  }
+  100% {
+    top: var(--move-to-y);
+    left: var(--move-to-x);
+    
+  }
+}
+
+
+#gridHard {
+  position: absolute;
+  left: 150px;
+  top: 1200px;
+  display: grid;
+  grid-template-columns: repeat(11, 1fr); /* Creates a 4-column grid */
+  max-width: 500px;
+  grid-gap: 0px; /* Space between grid items */
+  margin: auto; /* Center the grid horizontally */
+  background-color: rgb(236, 233, 229);
+}
+
+.cell {
+  padding: 3px 10px; /* Padding inside each cell */
+  width: 16px;
+  border: 1px solid #000000; /* Border around each cell */
+  text-align: center; /* Center text within each cell */
+  cursor: text; /* Change cursor to indicate editable */
+  
+}
+
+#gridSoft {
+  position: absolute;
+  left: 150px;
+  top: 1550px;
+  display: grid;
+  grid-template-columns: repeat(11, 1fr); /* Creates a 4-column grid */
+  grid-gap: 0px; /* Space between grid items */
+  max-width: 500px; /* Adjust based on your needs */
+  margin: auto; /* Center the grid horizontally */
+  background-color: rgb(236, 233, 229);
+}
+
+#gridPair {
+  position: absolute;
+  left: 150px;
+  top: 1850px;
+  display: grid;
+  grid-template-columns: repeat(11, 1fr); /* Creates a 4-column grid */
+  grid-gap: 0px; /* Space between grid items */
+  max-width: 500px; /* Adjust based on your needs */
+  margin: auto; /* Center the grid horizontally */
+  background-color: rgb(236, 233, 229);
+}
+
+#gridSurrender {
+  position: absolute;
+  left: 150px;
+  top: 2200px;
+  display: grid;
+  grid-template-columns: repeat(11, 1fr); /* Creates a 4-column grid */
+  grid-gap: 0px; /* Space between grid items */
+  max-width: 500px; /* Adjust based on your needs */
+  margin: auto; /* Center the grid horizontally */
+  background-color:rgb(236, 233, 229);
+}
+
+#gridText {
+  position: absolute;
+  left: 200px;
+  top: 1050px;
+  font-size: 40px;
+}
+
+#DgridText1 {
+  position: absolute;
+  left: 280px;
+  top: 1150px;
+  font-size: 20px;
+}
+
+#DgridText2 {
+  position: absolute;
+  left: 280px;
+  top: 1500px;
+  font-size: 20px;
+}
+#DgridText3 {
+  position: absolute;
+  left: 280px;
+  top: 1800px;
+  font-size: 20px;
+}
+#DgridText4 {
+  position: absolute;
+  left: 280px;
+  top: 2150px;
+  font-size: 20px;
+}
+
+
+
+#gridTextH {
+  position: absolute;
+  left: 60px;
+  top: 1300px;
+  transform: rotate(270deg);
+  font-size: 20px;
+}
+
+#gridTextS {
+  position: absolute;
+  left: 64px;
+  top: 1640px;
+  transform: rotate(270deg);
+  font-size: 20px;
+}
+#gridTextP {
+  position: absolute;
+  left: 100px;
+  top: 1950px;
+  transform: rotate(270deg);
+  font-size: 20px;
+  
+}
+#gridTextU {
+  position: absolute;
+  left: 40px;
+  top: 2230px;
+  transform: rotate(270deg);
+  font-size: 20px;
+}
+
+#gridKey {
+  position: absolute;
+  left: 150px;
+  top: 2350px;
+  font-size: 16px;
+}
+
+#deviation {
+  position: absolute;
+  left: 700px;
+  top: 1050px; 
+  font-size: 40px;
+}
+.title {
+  position: relative;
+  top: -100px;
+  left: -80px;
+  width: 150px;
+  padding: 69px 85px;
+  display: block; /* Make the title span a block to separate it from editable content */
+  margin-bottom: 10px; /* Space between the title and editable area */
+  font-weight: bold; /* Optional: Make the title bold */
+  font-size: 20px;
+}
+.gridDeviation {
+  display: grid;
+  position: absolute;
+  left: 700px;
+  top: 1200px;
+  grid-template-columns: repeat(2, 1fr); /* Creates a 5-column grid */
+  grid-template-rows: repeat(5, auto); /* Creates 2 rows */
+  grid-gap: 50px; /* Space between grid items */
+  max-width: 600px; /* Adjust based on your needs */
+  margin: 20px auto; /* Center the grid horizontally with some margin on the top and bottom */
+}
+
+.box {
+  background-color:rgb(236, 233, 229);
+  height: 150px;
+  width: 300px;
+  padding: 10px; /* Padding inside each box */
+  border: 1px solid #ccc; /* Border around each box */
+  text-align: start; /* Center text within each box */
+  cursor: text; /* Change cursor to indicate editable */
+}
+
+#betText {
+  position: absolute;
+  top: 1050px;
+  left: 1500px;
+  font-size: 40px;
+}
+
+#betGrid {
+  position: absolute;
+  left: 1500px;
+  top: 1200px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.box2 {
+  background-color:rgb(236, 233, 229);
+  height: 30px;
+  width: 60px;  
+  font-size: 20px;
+  padding: 1px; /* Padding inside each box */
+  border: 1px solid #221717; /* Border around each box */
+  
+  text-align: center;/* Center text within each box */
+  cursor: text; /* Change cursor to indicate editable */
+}
+
+#spreadText1 {
+  position: absolute;
+  left: 1520px;
+  top: 1150px;
+  font-size: 20px;
+}
+
+#spreadText2 {
+  position: absolute;
+  left: 1575px;
+  top: 1150px;
+  font-size: 20px;
+}
+#spreadText3 {
+  position: absolute;
+  left: 1630px;
+  top: 1150px;
+  font-size: 20px;
+}
+
+#failMarginText {
+  position: absolute;
+  left: 1500px;
+  top: 1580px;
+  font-size: 20px;
+}
+#failMargin {
+  position: absolute;
+  left: 1500px;
+  top: 1650px;
+  background-color:rgb(236, 233, 229);
+  height: 30px;
+  width: 80px;
+  
+  font-size: 20px;
+  padding: 1px; /* Padding inside each box */
+  border: 1px solid #221717; /* Border around each box */
+  
+  text-align: center;/* Center text within each box */
+  cursor: text; /* Change cursor to indicate editable */
+}
+
+#toggle1 {
+  position: absolute;
+  left: 1530px;
+  top: 1750px;
+  font-size: 20px;
+}
+#toggle2 {
+  position: absolute;
+  left: 1530px;
+  top: 1800px;
+  font-size: 20px;
+}
+
+#toggle3 {
+  position: absolute;
+  left: 1530px;
+  top: 1850px;
+  font-size: 20px;
+}
+
+#check1 {
+  position: absolute;
+  display: inline-block;
+  width: 20px;
+  border-radius: 10px;
+  
+  top: 1770px;
+  left: 1500px;
+}
+#check2 {
+  position: absolute;
+  display: inline-block;
+  width: 20px;
+  
+  top: 1820px;
+  left: 1500px;
+}
+#check3 {
+  position: absolute;
+  display: inline-block;
+  width: 20px;
+  
+  top: 1870px;
+  left: 1500px;
+}
+
+#decksInShoe {
+  position: absolute;
+  left: 1500px;
+  top: 1950px;
+  background-color:rgb(236, 233, 229);
+  height: 30px;
+  width: 80px;
+  
+  font-size: 20px;
+  padding: 1px; /* Padding inside each box */
+  border: 1px solid #221717; /* Border around each box */
+  
+  text-align: center;/* Center text within each box */
+  cursor: text; /* Change cursor to indicate editable */
+}
+#deckPen {
+  position: absolute;
+  left: 1500px;
+  top: 2000px;
+  background-color:rgb(236, 233, 229);
+  height: 30px;
+  width: 80px;
+  
+  font-size: 20px;
+  padding: 1px; /* Padding inside each box */
+  border: 1px solid #221717; /* Border around each box */
+  
+  text-align: center;/* Center text within each box */
+  cursor: text; /* Change cursor to indicate editable */
+}
+#speed {
+  position: absolute;
+  left: 1500px;
+  top: 2100px;
+  background-color:rgb(236, 233, 229);
+  height: 30px;
+  width: 80px;
+  
+  font-size: 20px;
+  padding: 1px; /* Padding inside each box */
+  border: 1px solid #221717; /* Border around each box */
+  
+  text-align: center;/* Center text within each box */
+  cursor: text; /* Change cursor to indicate editable */
+}
+
+#decksInShoeText {
+  position: absolute;
+  left: 1600px;
+  top: 1940px;
+  font-size: 20px;
+}
+#deckPenText {
+  position: absolute;
+  left: 1600px;
+  top: 1990px;
+  font-size: 20px;
+}
+#speedText {
+  position: absolute;
+  left: 1600px;
+  top: 2090px;
+  font-size: 20px;
+}
+#setBankrollText {
+  position: absolute;
+  left: 1600px;
+  top: 2040px;
+  font-size: 20px;
+}
+
+#setBankroll {
+  position: absolute;
+  left: 1500px;
+  top: 2050px;
+  background-color:rgb(236, 233, 229);
+  height: 30px;
+  width: 80px;
+  
+  font-size: 20px;
+  padding: 1px; /* Padding inside each box */
+  border: 1px solid #221717; /* Border around each box */
+  
+  text-align: center;/* Center text within each box */
+  cursor: text; /* Change cursor to indicate editable */
+}
+
+#betUpdate {
+  position: absolute;
+  left: 1700px;
+  top: 1530px;
+  width: 60px;
+  cursor: pointer;
+}
+
+#explainDev {
+  position: absolute;
+  left: 700px;
+  top: 2280px;
+  font-size: 20px;
+}
+
+#stratContainer {
+  position: absolute;
+  left: 1500px;
+  top: 2200px;
+  display: grid;
+  grid-template-columns: repeat(10, 1fr); /* Creates a 4-column grid */
+  grid-gap: 0px; /* Space between grid items */
+  
+  margin: auto; /* Center the grid horizontally */
+  background-color: rgb(236, 233, 229);
+}
+
+#stratText {
+  position: absolute;
+  top: 2150px;
+  left: 1600px;
+  font-size: 20px;
+}
+
+.cellStrat {
+  height: 10px;
+  width: 20px;
+  padding:8px 12px; /* Padding inside each cell */
+  border: 1px solid #000000; /* Border around each cell */
+  text-align: center; /* Center text within each cell */
+  cursor: text; /* Change cursor to indicate editable */
+}
+#bottomBorder {
+  position: absolute;
+  width: 100%;
+  height: 10%;
+  border:0px;
+  background-color: rgb(75, 91, 213);
+  
+  
+  top: 2700px;
+  left: -0px;
+  
+}
+#infoText {
+  position: absolute;
+  top: -0%;
+  font-size: 16px;
+  left: 5%;
+  text-decoration: underline;
+}
+#gitLink {
+  position:absolute;
+  left: 5%;
+  top: 50%;
+  font-size: 16px;
+}
+#mail {
+  position:absolute;
+  left: 5%;
+  top: 55%;
+  font-size: 16px;
+}
+
+
+body {
+  background-color: rgb(108, 176, 199);
+}
