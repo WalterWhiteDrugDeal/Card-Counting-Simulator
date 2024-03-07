@@ -2,29 +2,64 @@ document.addEventListener('DOMContentLoaded', () => { //Load everything first
   
   hitButton.addEventListener('click', () => {
     alertCenter(HANDPOOL.HAND, dealer, 'H')
-
     HANDPOOL.HAND.hit()
-    
-  });  
+  });
+  document.addEventListener('keypress', (event) => {
+    if (event.key === 'A' || event.key === 'a') {
+      hitButton.click()
+    }
+  });
   surrenderButton.addEventListener('click', () => {
     alertCenter(HANDPOOL.HAND, dealer, 'U')
     HANDPOOL.HAND.surrender()
-    });
+  });
+  document.addEventListener('keypress', (event) => {
+    if (event.key === 'U' || event.key === 'u') { 
+      surrenderButton.click()
+    }
+  });
   dubbleButton.addEventListener('click', () => {
     alertCenter(HANDPOOL.HAND, dealer, 'D')
-
     HANDPOOL.HAND.dubble()
     });
+  document.addEventListener('keypress', (event) => {
+    if (event.key === 'D' ||  event.key === 'd') { 
+      dubbleButton.click()
+    }
+  });
   standButton.addEventListener('click', () => {
     alertCenter(HANDPOOL.HAND, dealer, 'S')
 
     HANDPOOL.HAND.stand()
     });
+  document.addEventListener('keypress', (event) => {
+    if (event.key === 'S' || event.key === 's') { 
+      standButton.click()
+    }
+  });
   splitButton.addEventListener('click', () => {
     alertCenter(HANDPOOL.HAND, dealer, 'Y')
 
     HANDPOOL.HAND.split()
     });
+  document.addEventListener('keypress', (event) => {
+    if (event.key === 'W' || event.key === 'w') { 
+      splitButton.click()
+    }
+  });
+  document.addEventListener('keypress', (event) => {
+    if (event.key === 'x' || event.key === 'X') {
+      event.preventDefault()
+      goButton.click()
+      document.getElementById("goButton").setAttribute("disabled",true)
+
+    }
+  })
+  document.addEventListener('keypress', (event) => {
+    if (event.key === 'c' || event.key === 'C') {
+      selectButton.click()
+    }
+  } )
   
   shoeButt.addEventListener('click', () => {
     if (document.getElementById("shoe").style.display === "none") {
@@ -51,6 +86,11 @@ document.addEventListener('DOMContentLoaded', () => { //Load everything first
     }  
   })
   
+
+
+
+
+
 });
 
 function alertCenter(hand, dealer, ans) {
@@ -485,7 +525,7 @@ async function newDisplayCard(card, place) {
   }
   
   const theCard = document.createElement("img")
-  theCard.src = `${sort}.png`
+  theCard.src = `deckofcards-master\\deckofcards-master\\static\\img\\${sort}.png`
   //theCard.className = "card2"
   theCard.id = card.worldOrder
   theCard.style.position = "absolute"
@@ -510,7 +550,7 @@ async function newDealerCard(card) {
   startAnimation(1100, 200, 0.25)
   //await sleep(500)
   const theCard = document.createElement("img")
-  theCard.src = `${sort}.png`
+  theCard.src = `deckofcards-master\\deckofcards-master\\static\\img\\${sort}.png`
   dealerContainer.appendChild(theCard)
 }
 
@@ -519,7 +559,7 @@ async function hiddenCard() {
   //await sleep(TIME/2)
   let hiddenCard = document.createElement("img")
   hiddenCard.id = "hiddenCard"
-  hiddenCard.src = "back.png"
+  hiddenCard.src = "deckofcards-master\\deckofcards-master\\static\\img\\back.png"
   dealerContainer.appendChild(hiddenCard)
 }
 
@@ -533,7 +573,7 @@ async function showHiddenCard(dealerHand) {
     sort = sort.slice(1,3)
   }
   
-  hiddenCard.src = `${sort}.png`
+  hiddenCard.src = `deckofcards-master\\deckofcards-master\\static\\img\\${sort}.png`
 }
 
 function flipCard(card) {
@@ -557,15 +597,26 @@ function createButtons(Buttons) {
     button.style.padding = "4px 8px"
     button.id = `button${i}`; // Optional: Assign an ID to each button
 
-   container.appendChild(button); // Append the button to the container
-   button.addEventListener('click', () => {
-    document.getElementById("goButton").innerText = `Bet: ${button.innerText}`;
-    activeBet = Buttons[i];
+    container.appendChild(button); // Append the button to the container
+    button.addEventListener('click', () => {
+      document.getElementById("goButton").innerText = `Bet: ${button.innerText}`;
+      activeBet = Buttons[i];
   });
-  
+  document.addEventListener('keypress', (event) => {
+    const buttonIndex = parseInt(event.key, 10) - 1; // Convert key to index
+    if (buttonIndex >= 0 && buttonIndex < Buttons.length) {
+      let buttonID = `button${buttonIndex}`
+      let buttonToClick = document.getElementById(buttonID)
+      if (buttonToClick) {
+        buttonToClick.click()
+      }
+      
+    }
+  });
   }
-  
 }
+
+
 
 const selectButton = document.getElementById("handSelector")
 selectButton.addEventListener('click', () => {
@@ -613,6 +664,7 @@ function moveCard(targetX, targetY, card) {
 let res = 0
 
 goButton.addEventListener('click', () => {
+  //document.getElementById("goButton").setAttribute("disabled",true)
   if (!document.getElementById("check3").checked) {
     checkBetStrategy(activeBet)
 
@@ -628,7 +680,7 @@ goButton.addEventListener('click', () => {
   runGame(douce, activeBet)
   document.getElementById("popup").style.display = "none"
   dealer.empty()
-  
+ 
 })
 
 let deckPen = document.getElementById("deckPen").innerText

@@ -363,7 +363,7 @@ async function RUNFINALEY() {
 }
 async function func() {
   await sleep(TIME)
-  shoe.shuffleCheck()
+  document.getElementById("goButton").removeAttribute("disabled")
   res = bankroll.cash -res
   if (res >= 0) {
     document.getElementById("result").innerText = `Gain: +${res}`
