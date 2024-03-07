@@ -813,6 +813,7 @@
   position:absolute;
   top: 1050px;
   left: 800px;
+  white-space: nowrap;
 }
 
 body {
