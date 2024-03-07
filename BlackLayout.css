@@ -789,7 +789,10 @@
   top: 800px;
   left: 50px;
 }
-
+#infoGuide {
+  position: absolute;
+  top: 1150px;
+  left: 500px;
 body {
   background-color: rgb(108, 176, 199);
 }
