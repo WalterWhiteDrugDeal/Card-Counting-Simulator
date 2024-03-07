@@ -103,15 +103,11 @@
 }
 
 
-.card-imageX {
-  display: block;
-  margin-left: 45%;
-  margin-top: 24%;
-}
+
 
 .container {
   position: relative;
-  left: 0%;
+  left: 0px;
 }
 
 .dealer-container {
@@ -151,8 +147,8 @@
   top: 0px;
   left: 0px;
 
-  width: 100%;
-  height: 100%;
+  width: 2031.2px;
+  height: 859.2px;
   display: flex;
   justify-content: center; /* Center horizontally */
   align-items: center; /* Center vertically */
@@ -359,7 +355,7 @@
   border: 1px solid #000000; /* Border around each cell */
   text-align: center; /* Center text within each cell */
   cursor: text; /* Change cursor to indicate editable */
-  
+  white-space: nowrap;
 }
 
 #gridSoft {
@@ -403,6 +399,7 @@
   left: 200px;
   top: 1050px;
   font-size: 40px;
+  white-space: nowrap;
 }
 
 #DgridText1 {
@@ -410,6 +407,7 @@
   left: 280px;
   top: 1150px;
   font-size: 20px;
+  white-space: nowrap;
 }
 
 #DgridText2 {
@@ -417,18 +415,21 @@
   left: 280px;
   top: 1500px;
   font-size: 20px;
+  white-space: nowrap;
 }
 #DgridText3 {
   position: absolute;
   left: 280px;
   top: 1800px;
   font-size: 20px;
+  white-space: nowrap;
 }
 #DgridText4 {
   position: absolute;
   left: 280px;
   top: 2150px;
   font-size: 20px;
+  white-space: nowrap;
 }
 
 
@@ -439,6 +440,7 @@
   top: 1300px;
   transform: rotate(270deg);
   font-size: 20px;
+  white-space: nowrap;
 }
 
 #gridTextS {
@@ -447,6 +449,7 @@
   top: 1640px;
   transform: rotate(270deg);
   font-size: 20px;
+  white-space: nowrap;
 }
 #gridTextP {
   position: absolute;
@@ -454,7 +457,7 @@
   top: 1950px;
   transform: rotate(270deg);
   font-size: 20px;
-  
+  white-space: nowrap;
 }
 #gridTextU {
   position: absolute;
@@ -462,6 +465,7 @@
   top: 2230px;
   transform: rotate(270deg);
   font-size: 20px;
+  white-space: nowrap;
 }
 
 #gridKey {
@@ -476,6 +480,7 @@
   left: 700px;
   top: 1050px; 
   font-size: 40px;
+  
 }
 .title {
   position: relative;
@@ -515,6 +520,7 @@
   top: 1050px;
   left: 1500px;
   font-size: 40px;
+  white-space: nowrap;
 }
 
 #betGrid {
@@ -541,6 +547,7 @@
   left: 1520px;
   top: 1150px;
   font-size: 20px;
+  white-space: nowrap;
 }
 
 #spreadText2 {
@@ -548,12 +555,14 @@
   left: 1575px;
   top: 1150px;
   font-size: 20px;
+  white-space: nowrap;
 }
 #spreadText3 {
   position: absolute;
   left: 1630px;
   top: 1150px;
   font-size: 20px;
+  white-space: nowrap;
 }
 
 #failMarginText {
@@ -561,6 +570,8 @@
   left: 1500px;
   top: 1580px;
   font-size: 20px;
+  width: 500px;
+  
 }
 #failMargin {
   position: absolute;
@@ -583,12 +594,14 @@
   left: 1530px;
   top: 1750px;
   font-size: 20px;
+  white-space: nowrap;
 }
 #toggle2 {
   position: absolute;
   left: 1530px;
   top: 1800px;
   font-size: 20px;
+  white-space: nowrap;
 }
 
 #toggle3 {
@@ -596,6 +609,7 @@
   left: 1530px;
   top: 1850px;
   font-size: 20px;
+  white-space: nowrap;
 }
 
 #check1 {
@@ -675,24 +689,28 @@
   left: 1600px;
   top: 1940px;
   font-size: 20px;
+  white-space: nowrap;
 }
 #deckPenText {
   position: absolute;
   left: 1600px;
   top: 1990px;
   font-size: 20px;
+  white-space: nowrap;
 }
 #speedText {
   position: absolute;
   left: 1600px;
   top: 2090px;
   font-size: 20px;
+  white-space: nowrap;
 }
 #setBankrollText {
   position: absolute;
   left: 1600px;
   top: 2040px;
   font-size: 20px;
+  white-space: nowrap;
 }
 
 #setBankroll {
@@ -724,6 +742,7 @@
   left: 700px;
   top: 2280px;
   font-size: 20px;
+  width: 800px;
 }
 
 #stratContainer {
@@ -743,6 +762,7 @@
   top: 2150px;
   left: 1600px;
   font-size: 20px;
+  white-space: nowrap;
 }
 
 .cellStrat {
@@ -755,8 +775,8 @@
 }
 #bottomBorder {
   position: absolute;
-  width: 100%;
-  height: 10%;
+  width: 2031.2px;
+  height: 85.9167px;
   border:0px;
   background-color: rgb(75, 91, 213);
   
