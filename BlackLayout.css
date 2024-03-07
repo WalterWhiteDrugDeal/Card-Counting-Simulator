@@ -1,7 +1,7 @@
 .hitButton {
   position: absolute; /* Use 'fixed' if you want the button to stay in the same place even when scrolling */
-  top:85%; /* Adjust to place the button anywhere vertically */
-  left: 46%; /* Adjust to place the button anywhere horizontally */
+  top: 730.317px; /* Adjust to place the button anywhere vertically */
+  left: 934.35px; /* Adjust to place the button anywhere horizontally */
   transform: translate(-50%, -50%); /* Center the button based on its own size */
   width: 100px; /* Diameter of the circle */
   height: 100px; /* Diameter of the circle */
@@ -21,8 +21,8 @@
 }
 .standButton {
   position: absolute; /* Use 'fixed' if you want the button to stay in the same place even when scrolling */
-  top: 85%; /* Adjust to place the button anywhere vertically */
-  left: 54%; /* Adjust to place the button anywhere horizontally */
+  top: 730.317px; /* Adjust to place the button anywhere vertically */
+  left: 1096.83px; /* Adjust to place the button anywhere horizontally */
   transform: translate(-50%, -50%); /* Center the button based on its own size */
   width: 100px; /* Diameter of the circle */
   height: 100px; /* Diameter of the circle */
@@ -42,8 +42,8 @@
 
 .dubbleButton {
   position: absolute; /* Use 'fixed' if you want the button to stay in the same place even when scrolling */
-  top: 80%; /* Adjust to place the button anywhere vertically */
-  left: 40%; /* Adjust to place the button anywhere horizontally */
+  top: 687.35px; /* Adjust to place the button anywhere vertically */
+  left:812.467px; /* Adjust to place the button anywhere horizontally */
   transform: translate(-50%, -50%); /* Center the button based on its own size */
   width: 100px; /* Diameter of the circle */
   height: 100px; /* Diameter of the circle */
@@ -63,8 +63,8 @@
 
 .splitButton {
   position: absolute; /* Use 'fixed' if you want the button to stay in the same place even when scrolling */
-  top:80%; /* Adjust to place the button anywhere vertically */
-  left: 60%; /* Adjust to place the button anywhere horizontally */
+  top:687.35px; /* Adjust to place the button anywhere vertically */
+  left: 1218.72px; /* Adjust to place the button anywhere horizontally */
   transform: translate(-50%, -50%); /* Center the button based on its own size */
   width: 100px; /* Diameter of the circle */
   height: 100px; /* Diameter of the circle */
@@ -83,8 +83,8 @@
 }
 .surrenderButton {
   position: absolute; /* Use 'fixed' if you want the button to stay in the same place even when scrolling */
-  top: 78%; /* Adjust to place the button anywhere vertically */
-  left: 50%; /* Adjust to place the button anywhere horizontally */
+  top: 670.167px; /* Adjust to place the button anywhere vertically */
+  left: 1015.6px; /* Adjust to place the button anywhere horizontally */
   transform: translate(-50%, -50%); /* Center the button based on its own size */
   width: 100px; /* Diameter of the circle */
   height: 23px; /* Diameter of the circle */
@@ -116,7 +116,7 @@
 
 .dealer-container {
   position: absolute;
-  left: 50%;
+  left: 1015.6px;
   transform: translateX(-50%);
   justify-content: center;
   display: flex;
@@ -148,8 +148,8 @@
 
 .popup {
   position: absolute; /* Fixed positioning to make it stay in place even when scrolling */
-  top: 0%;
-  left: 0%;
+  top: 0px;
+  left: 0px;
 
   width: 100%;
   height: 100%;
