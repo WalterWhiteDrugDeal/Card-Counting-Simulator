@@ -1,6 +1,6 @@
 .hitButton {
   position: absolute; /* Use 'fixed' if you want the button to stay in the same place even when scrolling */
-  top: 730.317px; /* Adjust to place the button anywhere vertically */
+  top: 830.317px; /* Adjust to place the button anywhere vertically */
   left: 934.35px; /* Adjust to place the button anywhere horizontally */
   transform: translate(-50%, -50%); /* Center the button based on its own size */
   width: 100px; /* Diameter of the circle */
@@ -21,7 +21,7 @@
 }
 .standButton {
   position: absolute; /* Use 'fixed' if you want the button to stay in the same place even when scrolling */
-  top: 730.317px; /* Adjust to place the button anywhere vertically */
+  top: 830.317px; /* Adjust to place the button anywhere vertically */
   left: 1096.83px; /* Adjust to place the button anywhere horizontally */
   transform: translate(-50%, -50%); /* Center the button based on its own size */
   width: 100px; /* Diameter of the circle */
@@ -42,7 +42,7 @@
 
 .dubbleButton {
   position: absolute; /* Use 'fixed' if you want the button to stay in the same place even when scrolling */
-  top: 687.35px; /* Adjust to place the button anywhere vertically */
+  top: 787.35px; /* Adjust to place the button anywhere vertically */
   left:812.467px; /* Adjust to place the button anywhere horizontally */
   transform: translate(-50%, -50%); /* Center the button based on its own size */
   width: 100px; /* Diameter of the circle */
@@ -63,7 +63,7 @@
 
 .splitButton {
   position: absolute; /* Use 'fixed' if you want the button to stay in the same place even when scrolling */
-  top:687.35px; /* Adjust to place the button anywhere vertically */
+  top: 787.35px; /* Adjust to place the button anywhere vertically */
   left: 1218.72px; /* Adjust to place the button anywhere horizontally */
   transform: translate(-50%, -50%); /* Center the button based on its own size */
   width: 100px; /* Diameter of the circle */
@@ -83,7 +83,7 @@
 }
 .surrenderButton {
   position: absolute; /* Use 'fixed' if you want the button to stay in the same place even when scrolling */
-  top: 670.167px; /* Adjust to place the button anywhere vertically */
+  top: 770.167px; /* Adjust to place the button anywhere vertically */
   left: 1015.6px; /* Adjust to place the button anywhere horizontally */
   transform: translate(-50%, -50%); /* Center the button based on its own size */
   width: 100px; /* Diameter of the circle */
