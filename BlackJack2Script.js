@@ -216,6 +216,9 @@ function basicStrategy(hand, dealer, ans) {
       ${Ucor} is correct according to Basic strategy`)
       return
     }
+    else if (Ucor && Ucor.trim() === ans) {
+      return
+    }
   }
   
   let Hd = d-2
@@ -255,7 +258,7 @@ function checkS(hand) {
   let k =0
   let p = 0
   for (i in hand.cards) {
-    if (i.rank === 'A') {
+    if (hand.cards[i].rank === 'A') {
       k +=1
     }
     p += hand.cards[i].getValue()
@@ -272,6 +275,9 @@ function generalDeviations(hand, dealer, ans) {
     show.push(hand.cards[i].rank)
   }
 
+  let margin = parseFloat(document.getElementById("failMargin").innerText)
+  let count = shoe.trueCount
+
   for (i in list) {
     let neg = false
     let countId = list[i][0]
@@ -281,10 +287,8 @@ function generalDeviations(hand, dealer, ans) {
     }
     countId = parseFloat(list[i].slice(0,-1))
     
-    let margin = parseFloat(document.getElementById("failMargin").innerText)
-    let count = shoe.trueCount
     
-    //count = -0.4
+    
 
     let Ad0i
     let sna
@@ -301,119 +305,124 @@ function generalDeviations(hand, dealer, ans) {
       }
     }    
     else if (!neg) {
-      
       if (count + margin >= countId) {
         d0 = document.getElementById(list[i]).innerText
-        d0.replace(/\s+/g, "")
         Ad0 = d0.split(";")
         
       }
     }
-  
     
-    if (d0) {
-    for (j in Ad0) {
-      Ad0i = Ad0[j].trim()[0]
-      sna = Ad0[j][Ad0[j].length -1]
-      //console.log(Ad0i === 'H')
-      if (Ad0i === 'H') {
-        console.log(Ad0i)
-      }
-      id = Ad0[j].slice(Ad0[j].indexOf('(')+1,Ad0[j].indexOf(')')).split(',')
-      //console.log(Ad0i=== 'H')
-      if (Ad0i === 'P' && hand.cards[0].getValue() === hand.cards[1].getValue() && hand.cards.length === 2) {
-        console.log(id[2])
-        if (id[0] === 'T' && id [1] === 'T') {
-          id[0] = '10'
-          id[1] = '10'
+    
+    if ((!neg && count + margin >= countId) || (neg && count - margin <= countId)) {
+      for (j in Ad0) {
+        Ad0i = Ad0[j].trim()[0]
+        sna = Ad0[j][Ad0[j].length -1]
+        //console.log(Ad0i === 'H')
+        console.log(checkS(hand))
+        id = Ad0[j].slice(Ad0[j].indexOf('(')+1,Ad0[j].indexOf(')')).split(',')
+        //console.log(Ad0i=== 'H')
+        if (Ad0i === 'P' && hand.cards[0].getValue() === hand.cards[1].getValue() && hand.cards.length === 2) {
+          console.log(id[2])
+          if (id[0] === 'T' && id [1] === 'T') {
+            id[0] = '10'
+            id[1] = '10'
+          }
+          else if (id[0] === 'A' && id [1] === 'A') {
+            id[0] = '11'
+            id[1] = '11'
+          }
+        
+          if (hand.cards[0].getValue() == id[0] && dealer.cards[0].getValue() == id[2]) {
+            console.log(id)
+            res = true
+            if (ans != sna) {
+              if ((!neg && count - margin <= countId) || (neg && count + margin >= countId)) {
+                basicStrategy(hand, dealer, ans)
+              }
+              
+              else {
+                alert(`For Hand: ${show} and dealer: ${dealer.cards[0].rank}
+                ${sna} is correct according to true count deviations`)
+                return
+              } 
+            }
+            if (ans === sna) {
+              return
+            }
+          }
         }
-        else if (id[0] === 'A' && id [1] === 'A') {
-          id[0] = '11'
-          id[1] = '11'
-        }
-      
-        if (hand.cards[0].getValue() == id[0] && dealer.cards[0].getValue() == id[2]) {
-          console.log(id)
-          res = true
-          if (ans != sna) {
-            if ((!neg && count - margin <= countId) || (neg && count + margin >= countId)) {
-              basicStrategy(hand, dealer, ans)
+          
+        else if (Ad0i === 'S' && checkS(hand)) {
+          console.log(sna)
+
+          if (id[1] == handValue(hand.cards) -11 && id[2] == dealer.cards[0].rank) {
+            res = true
+            if (sna === 's') {
+              if (hand.cards.length == 2) {
+                sna = 'D'
+              }
+              else {
+                sna = 'S'
+              }
             }
             
-            else {
-              alert(`For Hand: ${show} and dealer: ${dealer.cards[0].rank}
-              ${sna} is correct according to true count deviations`)
-              return
-            } 
-          }
-          if (ans === sna) {
-            return
-          }
-        }
-      }
-        
-      else if (Ad0i === 'S' && checkS(hand)) {
-        console.log(Ad0i)
-
-        if (id[1] == handValue(hand.cards) -11 && id[2] == dealer.cards[0].rank) {
-          res = true
-          if (ans != sna) {
-            if ((!neg && count - margin <= countId) || (neg && count + margin >= countId)) {
-              basicStrategy(hand, dealer, ans)
+            if (ans != sna) {
+              if ((!neg && count - margin <= countId) || (neg && count + margin >= countId)) {
+                basicStrategy(hand, dealer, ans)
+              }
+              else {
+                alert(`For Hand: ${show} and dealer: ${dealer.cards[0].rank}
+                ${sna} is correct according to true count deviations`)
+                return
+              }            
             }
-            else {
-              alert(`For Hand: ${show} and dealer: ${dealer.cards[0].rank}
-              ${sna} is correct according to true count deviations`)
+            else if (ans === sna) {
               return
-            }            
-          }
-          if (ans === sna) {
-            return
-          }
-
-        }
-      }
-      else if (Ad0i === 'U' && (hand.placeId === '0' || hand.placeId === '1' || hand.placeId === 'U')) {
-        console.log(Ad0i)
-
-        if (id[0] == handValue(hand.cards) && id[1] == dealer.cards[0].rank) {
-          res = true
-          if (ans != sna) {
-            if ((!neg && count - margin <= countId) || (neg && count + margin >= countId)) {
-              basicStrategy(hand, dealer, ans)
             }
-            else {
-              alert(`For Hand: ${show} and dealer: ${dealer.cards[0].rank}
-              ${sna} is correct according to true count deviations`)
-              return
-            }   
-          }
-          if (ans === sna) {
-            return
-          }
 
+          }
         }
-      }
-      else if (Ad0i === 'H') {
-        console.log(Ad0i)
+        else if (Ad0i === 'U' && !checkS(hand) && hand.cards.length == 2 && (hand.placeId === '0' || hand.placeId === '1' || hand.placeId === 'U')) {
+          console.log(Ad0i)
 
-        if (id[0] == handValue(hand.cards) && id[1] == dealer.cards[0].rank) {
-          res = true
-          if (ans != sna) {
-            if ((!neg && count - margin <= countId) || (neg && count + margin >= countId)) {
-              basicStrategy(hand, dealer, ans)
+          if (id[0] == handValue(hand.cards) && id[1] == dealer.cards[0].rank) {
+            res = true
+            if (ans != sna) {
+              if ((!neg && count - margin <= countId) || (neg && count + margin >= countId)) {
+                basicStrategy(hand, dealer, ans)
+              }
+              else {
+                alert(`For Hand: ${show} and dealer: ${dealer.cards[0].rank}
+                ${sna} is correct according to true count deviations`)
+                return
+              }   
             }
-            else {
-              alert(`For Hand: ${show} and dealer: ${dealer.cards[0].rank}
-              ${sna} is correct according to true count deviations`)
+            if (ans === sna) {
               return
+            }
 
-            } 
-          }
-          if (ans === sna) {
-            return
           }
         }
+        else if (Ad0i === 'H') {
+          console.log(Ad0i)
+
+          if (id[0] == handValue(hand.cards) && id[1] == dealer.cards[0].rank) {
+            res = true
+            if (ans != sna) {
+              if ((!neg && count - margin <= countId) || (neg && count + margin >= countId)) {
+                basicStrategy(hand, dealer, ans)
+              }
+              else {
+                alert(`For Hand: ${show} and dealer: ${dealer.cards[0].rank}
+                ${sna} is correct according to true count deviations`)
+                return
+
+              } 
+            }
+            if (ans === sna) {
+              return
+            }
+          }
         }  
       }
     }
@@ -525,13 +534,13 @@ async function newDisplayCard(card, place) {
   }
   
   const theCard = document.createElement("img")
-  theCard.src = `${sort}.png`
+  theCard.src = `deckofcards-master\\deckofcards-master\\static\\img\\${sort}.png`
   //theCard.className = "card2"
   theCard.id = card.worldOrder
   theCard.style.position = "absolute"
   //theCard.style.display = "block"
   //theCard.style.boxShadow = "0 0 3px rgba(0,0,45)"
-  theCard.style.width = "130px"
+  theCard.style.width = "130.983px"
   theCard.style.left =`${place[0]}px`
   theCard.style.top = `${place[1]}px`
   //theCard.style.marginTop = placeId[0]
@@ -550,7 +559,7 @@ async function newDealerCard(card) {
   startAnimation(1100, 200, 0.25)
   //await sleep(500)
   const theCard = document.createElement("img")
-  theCard.src = `${sort}.png`
+  theCard.src = `deckofcards-master\\deckofcards-master\\static\\img\\${sort}.png`
   dealerContainer.appendChild(theCard)
 }
 
@@ -559,7 +568,7 @@ async function hiddenCard() {
   //await sleep(TIME/2)
   let hiddenCard = document.createElement("img")
   hiddenCard.id = "hiddenCard"
-  hiddenCard.src = "back.png"
+  hiddenCard.src = "deckofcards-master\\deckofcards-master\\static\\img\\back.png"
   dealerContainer.appendChild(hiddenCard)
 }
 
@@ -573,7 +582,7 @@ async function showHiddenCard(dealerHand) {
     sort = sort.slice(1,3)
   }
   
-  hiddenCard.src = `${sort}.png`
+  hiddenCard.src = `deckofcards-master\\deckofcards-master\\static\\img\\${sort}.png`
 }
 
 function flipCard(card) {
@@ -664,7 +673,6 @@ function moveCard(targetX, targetY, card) {
 let res = 0
 
 goButton.addEventListener('click', () => {
-  //document.getElementById("goButton").setAttribute("disabled",true)
   if (!document.getElementById("check3").checked) {
     checkBetStrategy(activeBet)
 
@@ -787,3 +795,5 @@ function generateGridsH() {
   }
   return container
 }
+
+//shoe.cards = [new Card('Hearts', '10'),new Card('Hearts', '10'),new Card('Hearts', '10'),new Card('Hearts', '10'),new Card('Hearts', '10'),new Card('Hearts', '10'),new Card('Hearts', '10'),new Card('Hearts', '10'),new Card('Hearts', '10')]
