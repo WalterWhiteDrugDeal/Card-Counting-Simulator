@@ -5,17 +5,17 @@
 .surrenderButton {
   position: absolute;
   transform: translate(-50%, -50%);
-  width: 100px;
-  height: 100px;
+  width: 5em;
+  height: 5em;
   border-radius: 50%;
   text-align: center;
-  line-height: 10px;
+  
   cursor: pointer;
-  font-size: 20px;
+  font-size: 120%;
 }
 
 .hitButton {
-  top: 86.63%; /* (830.317 / 859.2) * 100 */
+  top: 91.63%; /* (830.317 / 859.2) * 100 */
   left: 46.35%; /* (934.35 / 2015.2) * 100 */
   border: 1px solid #a93a3a;
   background-color: #be4444;
@@ -26,7 +26,7 @@
 }
 
 .standButton {
-  top: 86.63%;
+  top: 91.63%;
   left: 54.39%; /* (1096.83 / 2015.2) * 100 */
   border: 1px solid #717dc4;
   background-color: #3f57de;
@@ -37,7 +37,7 @@
 }
 
 .dubbleButton {
-  top: 81.63%; /* (787.35 / 859.2) * 100 */
+  top: 86.63%; /* (787.35 / 859.2) * 100 */
   left: 40.3%; /* (812.467 / 2015.2) * 100 */
   border: 1px solid #63b167;
   background-color: #56c667;
@@ -48,7 +48,7 @@
 }
 
 .splitButton {
-  top: 81.63%;
+  top: 86.63%;
   left: 60.45%; /* (1218.72 / 2015.2) * 100 */
   border: 1px solid #bbd17d;
   background-color: #e5d955;
@@ -59,11 +59,11 @@
 }
 
 .surrenderButton {
-  top: 79.63%; /* (770.167 / 859.2) * 100 */
+  top: 84.63%; /* (770.167 / 859.2) * 100 */
   left: 50.39%; /* (1015.6 / 2015.2) * 100 */
-  width: 100px;
-  height: 23px;
-  border-radius: 20px;
+  width: 5.2em;
+  height: 1.2em;
+  border-radius: 1em;
   border: 1px solid #76c6aa;
   background-color: #4b96d8;
 }
@@ -72,10 +72,7 @@
   background-color: #59c7d6;
 }
 
-.container {
-  position: relative;
-  left: 0px;
-}
+
 
 .dealer-container {
   position: absolute;
@@ -84,29 +81,8 @@
   transform: translateX(-50%) rotate(180deg);
   justify-content: center;
   display: flex;
-  height: 200px;
+  height: 12.5em;
 }
-
-.test-button {
-  position: absolute;
-  top: 78%;
-  left: 30%;
-  transform: translate(-50%, -50%);
-  width: 100px;
-  height: 23px;
-  border-radius: 20px;
-  border: 1px solid #0c9c6a;
-  background-color: #4b96d8;
-  text-align: center;
-  line-height: 10px;
-  cursor: pointer;
-  font-size: 20px;
-}
-
-.test-button:hover {
-  background-color: #59c7d6;
-}
-
 
 .popup {
   position: absolute;
@@ -121,10 +97,10 @@
 
 .popup-content {
   position: relative;
-  padding: 80px 100px; /* Consider using vw/vh for padding for more responsiveness */
+  padding: 4% 5%; /* Consider using vw/vh for padding for more responsiveness */
   background-color: rgba(236, 117, 77, 0.8);
-  border-radius: 30px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 15%;
+  box-shadow: 0 3em 6em rgba(0, 0, 0, 0.1);
 }
 
 #goButton {
@@ -133,8 +109,8 @@
   justify-content: center;
   width: 60%; /* Keeping as percentage of parent */
   top: 55%; /* Positioning adjusted */
-  padding: 10px 0px;
-  font-size: 16px; /* Consider using vw for scalable font size */
+  padding: 0.7em;
+  font-size: 100%; /* Consider using vw for scalable font size */
   cursor: pointer;
   background-color: rgb(219, 60, 60);
 }
@@ -145,9 +121,9 @@
   justify-content: center;
   top: 84%;
   width: 70%; /* Width as percentage */
-  border-radius: 6px;
-  padding: 1px 10px;
-  font-size: 16px; /* Consider vw for scalable fonts */
+  border-radius: 0.4em;
+  padding: 0.1em 1em;
+  font-size: 100%; /* Consider vw for scalable fonts */
   cursor: pointer;
   background-color: lightblue;
 }
@@ -170,7 +146,7 @@
   top: -30%;
   left: 50%;
   white-space: nowrap;
-  font-size: 30px; /* Consider vw for scalability */
+  font-size: 200%; /* Consider vw for scalability */
   color: rgb(224, 34, 34);
 }
 
@@ -226,33 +202,35 @@
   top: 29.09%;
   height: 20%;
   width: 2.48%;
-  border: 5px solid;
+  
+  border: 0.31em ridge black;
+  
   border-color: black;
   background-color: blue;
 }
 #bar {
   position: absolute;
   left: 27.54%;
-  top: 29.57%;
+  top: 29.62%;
   height: 0%;
-  width: 50px;
+  width: 2.48%;
   background-color:  rgb(108, 176, 199);
 }
 
 #barText {
-  left: 24.81%; /* (500 / 2015.2) * 100 */
-  top: 26.77%; /* (230 / 859.2) * 100 */
-  font-size: 15px;
+  left: 24.61%; /* (500 / 2015.2) * 100 */
+  top: 26.37%; /* (230 / 859.2) * 100 */
+  font-size: 100%;
 }
 
 
 :root {
-  --move-to-x: 200px; /* Default values */
-  --move-to-y: 200px;
+  --move-to-x: 69%; /* Default values */
+  --move-to-y: 10%;
 }
 #movingEntity {
-  width: 120px;
-  height: 180px;
+  width: 6.5%;
+  
   transform: rotate(90deg);
   position: absolute;
   opacity: 0;
@@ -294,8 +272,7 @@
   top: 139.67%; /* (1200 / 859.2) * 100 */
   display: grid;
   grid-template-columns: repeat(11, 1fr);
-  max-width: 500px;
-  grid-gap: 0px;
+  
   margin: auto;
   background-color: rgb(236, 233, 229);
 }
@@ -304,8 +281,7 @@
   top: 180.56%; /* (1550 / 859.2) * 100 */
   display: grid;
   grid-template-columns: repeat(11, 1fr);
-  max-width: 500px;
-  grid-gap: 0px;
+  
   margin: auto;
   background-color: rgb(236, 233, 229);
 }
@@ -315,8 +291,6 @@
   top: 215.36%; /* (1850 / 859.2) * 100 */
   display: grid;
   grid-template-columns: repeat(11, 1fr);
-  max-width: 500px;
-  grid-gap: 0px;
   margin: auto;
   background-color: rgb(236, 233, 229);
 }
@@ -325,8 +299,6 @@
   top: 256.11%; /* (2200 / 859.2) * 100 */
   display: grid;
   grid-template-columns: repeat(11, 1fr);
-  max-width: 500px;
-  grid-gap: 0px;
   margin: auto;
   background-color: rgb(236, 233, 229);
 
@@ -334,7 +306,7 @@
 
 #gridKey {
   top: 273.64%; /* (2350 / 859.2) * 100 */
-  font-size: 16px;
+  font-size: 100%;
 }
 
 #gridText, #DgridText1, #DgridText2, #DgridText3, #DgridText4 {
@@ -344,30 +316,33 @@
 
 #gridText {
   top: 122.24%; /* (1050 / 859.2) * 100 */
-  font-size: 40px;
+  font-size: 250%;
 }
 
 #DgridText1 {
   top: 133.91%; /* (1150 / 859.2) * 100 */
-  font-size: 20px;
+  font-size: 120%;
 }
 
 #DgridText2 {
   top: 174.71%; /* (1500 / 859.2) * 100 */
+  font-size: 120%;
 }
 
 #DgridText3 {
   top: 209.51%; /* (1800 / 859.2) * 100 */
+  font-size: 120%;
 }
 
 #DgridText4 {
   top: 250.26%; /* (2150 / 859.2) * 100 */
+  font-size: 120%;
 }
 
 #gridTextH, #gridTextS, #gridTextP, #gridTextU {
   position: absolute;
   transform: rotate(270deg);
-  font-size: 20px;
+  font-size: 120%;
 }
 
 #gridTextH {
@@ -393,44 +368,73 @@
 #deviation {
   left: 34.74%; /* (700 / 2015.2) * 100 */
   top: 122.24%; /* (1050 / 859.2) * 100 */
-  font-size: 40px;
+  font-size: 250%;
 }
-.title {
-  position: relative;
-  top: -100px;
-  left: -80px;
-  width: 150px;
-  padding: 69px 85px;
-  display: block; /* Make the title span a block to separate it from editable content */
-  margin-bottom: 10px; /* Space between the title and editable area */
-  font-weight: bold; /* Optional: Make the title bold */
-  font-size: 20px;
+#title1,#title3,#title5,
+#title7,#title9 {
+  position: absolute;
+ 
+  left: 35%;
+  width: 10%;
+  
+  display: block; 
+  font-weight: bold;
+  font-size: 120%;
+}
+#title2,#title4,#title6,
+#title8,#title0 {
+  position: absolute;
+ 
+  left: 52.5%;
+  width: 10%;
+  
+  display: block; 
+  font-weight: bold;
+  font-size: 120%;
+}
+
+#title1,#title2 {
+  top: 139%;
+}
+#title3,#title4 {
+  top: 164%;
+}
+#title5, #title6 {
+  top: 189%;
+}
+#title7, #title8 {
+  top: 214%;
+}
+#title9, #title0 {
+  top: 239%;
 }
 
 .gridDeviation {
   left: 34.74%;
   top: 139.67%;
   display: grid;
+  width: 33%;
+  height: 98%; 
   grid-template-columns: repeat(2, 1fr);
-  
-  grid-gap: 50px;
-  
-  margin: 20px auto;
+  grid-gap: 5%;
+  margin: 1% auto;
 }
 
 .box {
   background-color: rgb(236, 233, 229);
-  height: 150px;
-  width: 300px;
-  padding: 10px;
+
+  height: 11.1em;
+  clip: auto;
+  width: 19em;
+  padding: 3.3% 3%;
   border: 1px solid #ccc;
   text-align: start;
   cursor: text;
 }
 
 .cell {
-  padding: 3px 10px;
-  width: 16px;
+  padding: 0.2em 0.6em;
+  width: 1.2em;
   border: 1px solid #000000;
   text-align: center;
   cursor: text;
@@ -446,7 +450,7 @@
 
 #betText {
   top: 122.24%; /* (1050 / 859.2) * 100 */
-  font-size: 40px;
+  font-size: 250%;
   white-space: nowrap;
 }
 
@@ -458,10 +462,10 @@
 
 .box2 {
   background-color: rgb(236, 233, 229);
-  height: 30px;
-  width: 60px;
-  font-size: 20px;
-  padding: 1px;
+  height: 1.6em;
+  width: 3.2em;
+  font-size: 120%;
+  padding: 0.1em;
   border: 1px solid #221717;
   text-align: center;
   cursor: text;
@@ -470,35 +474,35 @@
 #spreadText1 {
   left: 75.49%; /* (1520 / 2015.2) * 100 */
   top: 133.91%; /* (1150 / 859.2) * 100 */
-  font-size: 20px;
+  font-size:  120%;
   white-space: nowrap;
 }
 
 #spreadText2 {
   left: 78.17%; /* (1575 / 2015.2) * 100 */
   top: 133.91%;
-  font-size: 20px;
+  font-size:  120%;
 }
 
 #spreadText3 {
   left: 80.85%; /* (1630 / 2015.2) * 100 */
   top: 133.91%;
-  font-size: 20px;
+  font-size:  120%;
 }
 
 #failMarginText {
   top: 183.93%; /* (1580 / 859.2) * 100 */
-  font-size: 20px;
+  font-size:  120%;
   width: 25%;
 }
 
 #failMargin {
   top: 192.04%; /* (1650 / 859.2) * 100 */
   background-color: rgb(236, 233, 229);
-  height: 30px;
-  width: 100px;
-  font-size: 20px;
-  padding: 1px;
+  height: 1.5em;
+  width: 4em;
+  font-size: 120%;
+  padding: 0.1em;
   border: 1px solid #221717;
   text-align: center;
 }
@@ -506,38 +510,37 @@
 #toggle1 {
   top: 203.73%; /* (1750 / 859.2) * 100 */
   left: 76%;
-  font-size: 20px;
+  font-size:  120%;
 }
 
 #toggle2 {
   top: 209.51%; /* (1800 / 859.2) * 100 */
-  font-size: 20px;
+  font-size:  120%;
   left: 76%;
 }
 
 #toggle3 {
   top: 215.36%; /* (1850 / 859.2) * 100 */
-  font-size: 20px;
+  font-size:  120%;
   left: 76%;
 }
 
 #check1 {
   left: 74.39%;
   top: 206.14%; /* (1770 / 859.2) * 100 */
-  width: 20px;
-  border-radius: 10px;
+  width: 1.4em;
 }
 
 #check2 {
   left: 74.39%;
   top: 211.92%; /* (1820 / 859.2) * 100 */
-  width: 20px;
+  width:  1.4em;
 }
 
 #check3 {
   left: 74.39%;
   top: 217.77%; /* (1870 / 859.2) * 100 */
-  width: 20px;
+  width:  1.4em;
 }
 
 
@@ -549,11 +552,11 @@
 
 #decksInShoe {
   background-color:rgb(236, 233, 229);
-  height: 30px;
-  width: 80px;
+  height: 1.6em;
+  width: 4em;
   
-  font-size: 20px;
-  padding: 1px; /* Padding inside each box */
+  font-size:  120%;
+  padding: 0.1em; /* Padding inside each box */
   border: 1px solid #221717; /* Border around each box */
   
   text-align: center;/* Center text within each box */
@@ -561,11 +564,11 @@
 }
 #deckPen {
   background-color:rgb(236, 233, 229);
-  height: 30px;
-  width: 80px;
+  height: 1.6em;
+  width: 4em;
   
-  font-size: 20px;
-  padding: 1px; /* Padding inside each box */
+  font-size:  120%;
+  padding: 0.1em; /* Padding inside each box */
   border: 1px solid #221717; /* Border around each box */
   
   text-align: center;/* Center text within each box */
@@ -573,11 +576,11 @@
 }
 #setBankroll {
   background-color:rgb(236, 233, 229);
-  height: 30px;
-  width: 80px;
+  height:1.6em;
+  width: 4em;
   
-  font-size: 20px;
-  padding: 1px; /* Padding inside each box */
+  font-size: 120%;
+  padding: 0.1em; /* Padding inside each box */
   border: 1px solid #221717; /* Border around each box */
   
   text-align: center;/* Center text within each box */
@@ -585,11 +588,11 @@
 }
 #speed {
   background-color:rgb(236, 233, 229);
-  height: 30px;
-  width: 80px;
+  height: 1.6em;
+  width: 4em;
   
-  font-size: 20px;
-  padding: 1px; /* Padding inside each box */
+  font-size:  120%;
+  padding: 0.1em; /* Padding inside each box */
   border: 1px solid #221717; /* Border around each box */
   
   text-align: center;/* Center text within each box */
@@ -601,7 +604,7 @@
 #decksInShoeText, #deckPenText, #speedText, #setBankrollText {
   position: absolute;
   left: 79.45%; /* (1600 / 2015.2) * 100 */
-  font-size: 20px;
+  font-size:  120%;
   white-space: nowrap;
 }
 
@@ -638,7 +641,7 @@
 
 #explainDev {
   left: 34.74%; /* (700 / 2015.2) * 100 */
-  top: 250%;
+  top: 260%;
 }
 
 #bottomBorder, #infoText, #gitLink, #mail {
@@ -720,15 +723,15 @@
   top: 256.11%; /* (2200 / 859.2) * 100 */
   display: grid;
   grid-template-columns: repeat(10, 1fr);
-  grid-gap: 0px;
+  
   margin: auto; /* Centering might need review for responsiveness */
   background-color: rgb(236, 233, 229);
 }
 
 .cellStrat {
-  height: 10px;
-  width: 20px;
-  padding: 8px 12px;
+  height: 0.8em;
+  width: 1.2em;
+  padding: 0.5em 0.75em;
   border: 1px solid #000000;
   text-align: center;
   cursor: text;
