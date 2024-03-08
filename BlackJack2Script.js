@@ -408,7 +408,7 @@ function generalDeviations(hand, dealer, ans) {
         }
         else if (Ad0i === 'H') {
           console.log(Ad0i)
-
+          
           if (id[0] == handValue(hand.cards) && id[1] == dealer.cards[0].rank) {
             if (sna === 's') {
               if (hand.cards.length == 2) {
@@ -548,15 +548,16 @@ async function newDisplayCard(card, place) {
   }
   
   const theCard = document.createElement("img")
-  theCard.src = `${sort}.png`
+  theCard.src = `deckofcards-master\\deckofcards-master\\static\\img\\${sort}.png`
   //theCard.className = "card2"
   theCard.id = card.worldOrder
   theCard.style.position = "absolute"
   //theCard.style.display = "block"
   //theCard.style.boxShadow = "0 0 3px rgba(0,0,45)"
-  theCard.style.width = "130.983px"
-  theCard.style.left =`${place[0]}px`
-  theCard.style.top = `${place[1]}px`
+  theCard.style.width = "6.5%"
+  theCard.style.left =`${place[0]}%`
+  theCard.style.top = `${place[1]}%`
+  console.log(place)
   //theCard.style.marginTop = placeId[0]
   //theCard.style.marginLeft = placeId[1]
   
@@ -570,19 +571,19 @@ async function newDealerCard(card) {
   if (sort[0] === '1') {
     sort = sort.slice(1,3)
   }
-  startAnimation(1100, 200, 0.25)
+  startAnimation(50, 10, 0.25)
   //await sleep(500)
   const theCard = document.createElement("img")
-  theCard.src = `${sort}.png`
+  theCard.src = `deckofcards-master\\deckofcards-master\\static\\img\\${sort}.png`
   dealerContainer.appendChild(theCard)
 }
 
 async function hiddenCard() {
-  startAnimation(1100, 200, 0.25)
+  startAnimation(50, 10, 0.25)
   //await sleep(TIME/2)
   let hiddenCard = document.createElement("img")
   hiddenCard.id = "hiddenCard"
-  hiddenCard.src = "back.png"
+  hiddenCard.src = "deckofcards-master\\deckofcards-master\\static\\img\\back.png"
   dealerContainer.appendChild(hiddenCard)
 }
 
@@ -596,7 +597,7 @@ async function showHiddenCard(dealerHand) {
     sort = sort.slice(1,3)
   }
   
-  hiddenCard.src = `${sort}.png`
+  hiddenCard.src = `deckofcards-master\\deckofcards-master\\static\\img\\${sort}.png`
 }
 
 function flipCard(card) {
@@ -661,10 +662,10 @@ function startAnimation(targetX, targetY, time) {
   entity.style.animation = "none"
   void entity.offsetWidth;
   const rootStyle = document.documentElement.style;
-
+  
   // Set CSS variables to target positions
-  rootStyle.setProperty('--move-to-x', targetX + 'px');
-  rootStyle.setProperty('--move-to-y', targetY + 'px');
+  rootStyle.setProperty('--move-to-x', targetX + '%');
+  rootStyle.setProperty('--move-to-y', targetY + '%');
 
   // Apply the animation
   entity.style.animation = `moveAndDisappear ${time}s`;
@@ -675,10 +676,11 @@ function moveCard(targetX, targetY, card) {
   const entity = document.getElementById(card);
   
   const rootStyle = document.documentElement.style;
-
+  
   // Set CSS variables to target positions
-  rootStyle.setProperty('--move-to-x', targetX + 'px');
-  rootStyle.setProperty('--move-to-y', targetY + 'px');
+  rootStyle.setProperty('--move-to-y', targetX + '%');
+
+  rootStyle.setProperty('--move-to-y', targetY + '%');
 
   // Apply the animation
   entity.style.animation = `cardMove 0.5s`;
