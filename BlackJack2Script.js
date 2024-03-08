@@ -554,7 +554,7 @@ async function newDisplayCard(card, place) {
   theCard.style.position = "absolute"
   //theCard.style.display = "block"
   //theCard.style.boxShadow = "0 0 3px rgba(0,0,45)"
-  theCard.style.width = "180px"
+  theCard.style.width = "120px"
   theCard.style.left =`${place[0]}px`
   theCard.style.top = `${place[1]}px`
   console.log(place)
