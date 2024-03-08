@@ -571,7 +571,7 @@ async function newDealerCard(card) {
   if (sort[0] === '1') {
     sort = sort.slice(1,3)
   }
-  startAnimation(50, 10, 0.25)
+  startAnimation(1100, 200, 0.25)
   //await sleep(500)
   const theCard = document.createElement("img")
   theCard.src = `${sort}.png`
@@ -579,7 +579,7 @@ async function newDealerCard(card) {
 }
 
 async function hiddenCard() {
-  startAnimation(50, 10, 0.25)
+  startAnimation(1100, 200, 0.25)
   //await sleep(TIME/2)
   let hiddenCard = document.createElement("img")
   hiddenCard.id = "hiddenCard"
