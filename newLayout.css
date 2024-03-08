@@ -1,0 +1,739 @@
+.hitButton,
+.standButton,
+.dubbleButton,
+.splitButton,
+.surrenderButton {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 10px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.hitButton {
+  top: 86.63%; /* (830.317 / 859.2) * 100 */
+  left: 46.35%; /* (934.35 / 2015.2) * 100 */
+  border: 1px solid #a93a3a;
+  background-color: #be4444;
+}
+
+.hitButton:hover {
+  background-color: #9a1f1f;
+}
+
+.standButton {
+  top: 86.63%;
+  left: 54.39%; /* (1096.83 / 2015.2) * 100 */
+  border: 1px solid #717dc4;
+  background-color: #3f57de;
+}
+
+.standButton:hover {
+  background-color: #3f429f;
+}
+
+.dubbleButton {
+  top: 81.63%; /* (787.35 / 859.2) * 100 */
+  left: 40.3%; /* (812.467 / 2015.2) * 100 */
+  border: 1px solid #63b167;
+  background-color: #56c667;
+}
+
+.dubbleButton:hover {
+  background-color: #4d9a58;
+}
+
+.splitButton {
+  top: 81.63%;
+  left: 60.45%; /* (1218.72 / 2015.2) * 100 */
+  border: 1px solid #bbd17d;
+  background-color: #e5d955;
+}
+
+.splitButton:hover {
+  background-color: #a9a71d;
+}
+
+.surrenderButton {
+  top: 79.63%; /* (770.167 / 859.2) * 100 */
+  left: 50.39%; /* (1015.6 / 2015.2) * 100 */
+  width: 100px;
+  height: 23px;
+  border-radius: 20px;
+  border: 1px solid #76c6aa;
+  background-color: #4b96d8;
+}
+
+.surrenderButton:hover {
+  background-color: #59c7d6;
+}
+
+.container {
+  position: relative;
+  left: 0px;
+}
+
+.dealer-container {
+  position: absolute;
+  left: 50.39%; /* (1015.6 / 2015.2) * 100 */
+  top: 2%;
+  transform: translateX(-50%) rotate(180deg);
+  justify-content: center;
+  display: flex;
+  height: 200px;
+}
+
+.test-button {
+  position: absolute;
+  top: 78%;
+  left: 30%;
+  transform: translate(-50%, -50%);
+  width: 100px;
+  height: 23px;
+  border-radius: 20px;
+  border: 1px solid #0c9c6a;
+  background-color: #4b96d8;
+  text-align: center;
+  line-height: 10px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.test-button:hover {
+  background-color: #59c7d6;
+}
+
+
+.popup {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-content {
+  position: relative;
+  padding: 80px 100px; /* Consider using vw/vh for padding for more responsiveness */
+  background-color: rgba(236, 117, 77, 0.8);
+  border-radius: 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#goButton {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  justify-content: center;
+  width: 60%; /* Keeping as percentage of parent */
+  top: 55%; /* Positioning adjusted */
+  padding: 10px 0px;
+  font-size: 16px; /* Consider using vw for scalable font size */
+  cursor: pointer;
+  background-color: rgb(219, 60, 60);
+}
+
+#handSelector {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  justify-content: center;
+  top: 84%;
+  width: 70%; /* Width as percentage */
+  border-radius: 6px;
+  padding: 1px 10px;
+  font-size: 16px; /* Consider vw for scalable fonts */
+  cursor: pointer;
+  background-color: lightblue;
+}
+
+#result, #buttonContainer {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  width: 100%; /* Full width for container, adjusted for result as needed */
+}
+#buttonContainer {
+  top: 25%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+    
+}
+
+#result {  
+  text-align: center;
+  top: -30%;
+  left: 50%;
+  white-space: nowrap;
+  font-size: 30px; /* Consider vw for scalability */
+  color: rgb(224, 34, 34);
+}
+
+#bankroll, #shoe, #runningCount, #trueCount {
+  position: absolute;
+  left: 20vw; /* Adjusted to viewport width for responsiveness */
+  font-size: 1vw; /* Scalable font size */
+}
+
+#bankroll {
+  top: 3.49%; /* (30 / 859.2) * 100 */
+}
+
+#shoe {
+  top: 6.98%; /* (60 / 859.2) * 100 */
+}
+#shoeButt {
+  top: 9.4%; /* (78 / 859.2) * 100 */
+}
+
+#runningCount {
+  top: 10.47%; /* (90 / 859.2) * 100 */
+}
+#runningButt, #trueButt, #shoeButt {
+  position: absolute;
+  left: 19vw;
+  width: 1%;
+  height: 2%;
+  border-radius: 100%;
+  
+}
+#runningButt {
+  top: 12.85%; /* (108 / 859.2) * 100 */
+}
+
+#trueCount {
+  top: 13.96%; /* (120 / 859.2) * 100 */
+}
+
+#trueButt {
+  top: 16.3%; /* (138 / 859.2) * 100 */
+}
+
+#bar, #barText, #shoeCounter{
+  position: absolute;
+  left: 27vw; /* Adjusted for responsiveness */
+  /* Dimensions and other properties may need adjustment based on design */
+}
+
+#shoeCounter {
+  position: absolute;
+  left: 27.29%;
+  top: 29.09%;
+  height: 20%;
+  width: 2.48%;
+  border: 5px solid;
+  border-color: black;
+  background-color: blue;
+}
+#bar {
+  position: absolute;
+  left: 27.54%;
+  top: 29.57%;
+  height: 0%;
+  width: 50px;
+  background-color:  rgb(108, 176, 199);
+}
+
+#barText {
+  left: 24.81%; /* (500 / 2015.2) * 100 */
+  top: 26.77%; /* (230 / 859.2) * 100 */
+  font-size: 15px;
+}
+
+
+:root {
+  --move-to-x: 200px; /* Default values */
+  --move-to-y: 200px;
+}
+#movingEntity {
+  width: 120px;
+  height: 180px;
+  transform: rotate(90deg);
+  position: absolute;
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
+
+@keyframes moveAndDisappear {
+  0% {
+    top: 23.28%; /* (200 / 859.2) * 100 */
+    left: 64.5%; /* (1300 / 2015.2) * 100 */
+    opacity: 1;
+  }
+  100% {
+    /* Dynamically adjusted via CSS variables */
+    top: var(--move-to-y); /* Adjusted through JavaScript */
+    left: var(--move-to-x); /* Adjusted through JavaScript */
+    opacity: 0;
+  }
+}
+
+@keyframes cardMove {
+  0% {
+    /* Initial state can optionally be defined here */
+  }
+  100% {
+    top: var(--move-to-y); /* Adjusted through JavaScript */
+    left: var(--move-to-x); /* Adjusted through JavaScript */
+  }
+}
+
+
+
+#gridHard, #gridSoft, #gridPair, #gridSurrender, #gridKey, #deviation, .gridDeviation {
+  position: absolute;
+  left: 7.44%; /* (150 / 2015.2) * 100 */
+}
+
+#gridHard {
+  top: 139.67%; /* (1200 / 859.2) * 100 */
+  display: grid;
+  grid-template-columns: repeat(11, 1fr);
+  max-width: 500px;
+  grid-gap: 0px;
+  margin: auto;
+  background-color: rgb(236, 233, 229);
+}
+
+#gridSoft {
+  top: 180.56%; /* (1550 / 859.2) * 100 */
+  display: grid;
+  grid-template-columns: repeat(11, 1fr);
+  max-width: 500px;
+  grid-gap: 0px;
+  margin: auto;
+  background-color: rgb(236, 233, 229);
+}
+
+
+#gridPair {
+  top: 215.36%; /* (1850 / 859.2) * 100 */
+  display: grid;
+  grid-template-columns: repeat(11, 1fr);
+  max-width: 500px;
+  grid-gap: 0px;
+  margin: auto;
+  background-color: rgb(236, 233, 229);
+}
+
+#gridSurrender {
+  top: 256.11%; /* (2200 / 859.2) * 100 */
+  display: grid;
+  grid-template-columns: repeat(11, 1fr);
+  max-width: 500px;
+  grid-gap: 0px;
+  margin: auto;
+  background-color: rgb(236, 233, 229);
+
+}
+
+#gridKey {
+  top: 273.64%; /* (2350 / 859.2) * 100 */
+  font-size: 16px;
+}
+
+#gridText, #DgridText1, #DgridText2, #DgridText3, #DgridText4 {
+  position: absolute;
+  left: 9.93%; /* (200 / 2015.2) * 100 */
+}
+
+#gridText {
+  top: 122.24%; /* (1050 / 859.2) * 100 */
+  font-size: 40px;
+}
+
+#DgridText1 {
+  top: 133.91%; /* (1150 / 859.2) * 100 */
+  font-size: 20px;
+}
+
+#DgridText2 {
+  top: 174.71%; /* (1500 / 859.2) * 100 */
+}
+
+#DgridText3 {
+  top: 209.51%; /* (1800 / 859.2) * 100 */
+}
+
+#DgridText4 {
+  top: 250.26%; /* (2150 / 859.2) * 100 */
+}
+
+#gridTextH, #gridTextS, #gridTextP, #gridTextU {
+  position: absolute;
+  transform: rotate(270deg);
+  font-size: 20px;
+}
+
+#gridTextH {
+  left: 2.97%; /* (60 / 2015.2) * 100 */
+  top: 151.52%; /* (1300 / 859.2) * 100 */
+}
+
+#gridTextS {
+  left: 3.17%; /* (64 / 2015.2) * 100 */
+  top: 190.99%; /* (1640 / 859.2) * 100 */
+}
+
+#gridTextP {
+  left: 4.96%; /* (100 / 2015.2) * 100 */
+  top: 227.22%; /* (1950 / 859.2) * 100 */
+}
+
+#gridTextU {
+  left: 1.98%; /* (40 / 2015.2) * 100 */
+  top: 259.70%; /* (2230 / 859.2) * 100 */
+}
+
+#deviation {
+  left: 34.74%; /* (700 / 2015.2) * 100 */
+  top: 122.24%; /* (1050 / 859.2) * 100 */
+  font-size: 40px;
+}
+.title {
+  position: relative;
+  top: -100px;
+  left: -80px;
+  width: 150px;
+  padding: 69px 85px;
+  display: block; /* Make the title span a block to separate it from editable content */
+  margin-bottom: 10px; /* Space between the title and editable area */
+  font-weight: bold; /* Optional: Make the title bold */
+  font-size: 20px;
+}
+
+.gridDeviation {
+  left: 34.74%;
+  top: 139.67%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  
+  grid-gap: 50px;
+  
+  margin: 20px auto;
+}
+
+.box {
+  background-color: rgb(236, 233, 229);
+  height: 150px;
+  width: 300px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  text-align: start;
+  cursor: text;
+}
+
+.cell {
+  padding: 3px 10px;
+  width: 16px;
+  border: 1px solid #000000;
+  text-align: center;
+  cursor: text;
+  white-space: nowrap;
+}
+
+
+
+#betText, #betGrid, #spreadText1, #spreadText2, #spreadText3, #failMarginText, #failMargin, #toggle1, #toggle2, #toggle3, #check1, #check2, #check3 {
+  position: absolute;
+  left: 74.39%; /* (1500 / 2015.2) * 100 */
+}
+
+#betText {
+  top: 122.24%; /* (1050 / 859.2) * 100 */
+  font-size: 40px;
+  white-space: nowrap;
+}
+
+#betGrid {
+  top: 139.67%; /* (1200 / 859.2) * 100 */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.box2 {
+  background-color: rgb(236, 233, 229);
+  height: 30px;
+  width: 60px;
+  font-size: 20px;
+  padding: 1px;
+  border: 1px solid #221717;
+  text-align: center;
+  cursor: text;
+}
+
+#spreadText1 {
+  left: 75.49%; /* (1520 / 2015.2) * 100 */
+  top: 133.91%; /* (1150 / 859.2) * 100 */
+  font-size: 20px;
+  white-space: nowrap;
+}
+
+#spreadText2 {
+  left: 78.17%; /* (1575 / 2015.2) * 100 */
+  top: 133.91%;
+  font-size: 20px;
+}
+
+#spreadText3 {
+  left: 80.85%; /* (1630 / 2015.2) * 100 */
+  top: 133.91%;
+  font-size: 20px;
+}
+
+#failMarginText {
+  top: 183.93%; /* (1580 / 859.2) * 100 */
+  font-size: 20px;
+  width: 25%;
+}
+
+#failMargin {
+  top: 192.04%; /* (1650 / 859.2) * 100 */
+  background-color: rgb(236, 233, 229);
+  height: 30px;
+  width: 100px;
+  font-size: 20px;
+  padding: 1px;
+  border: 1px solid #221717;
+  text-align: center;
+}
+
+#toggle1 {
+  top: 203.73%; /* (1750 / 859.2) * 100 */
+  left: 76%;
+  font-size: 20px;
+}
+
+#toggle2 {
+  top: 209.51%; /* (1800 / 859.2) * 100 */
+  font-size: 20px;
+  left: 76%;
+}
+
+#toggle3 {
+  top: 215.36%; /* (1850 / 859.2) * 100 */
+  font-size: 20px;
+  left: 76%;
+}
+
+#check1 {
+  left: 74.39%;
+  top: 206.14%; /* (1770 / 859.2) * 100 */
+  width: 20px;
+  border-radius: 10px;
+}
+
+#check2 {
+  left: 74.39%;
+  top: 211.92%; /* (1820 / 859.2) * 100 */
+  width: 20px;
+}
+
+#check3 {
+  left: 74.39%;
+  top: 217.77%; /* (1870 / 859.2) * 100 */
+  width: 20px;
+}
+
+
+
+#decksInShoe, #deckPen, #speed, #setBankroll, #betUpdate, #explainDev, #stratContainer, #bottomBorder, #controlls, #infoGuide {
+  position: absolute;
+  left: 74.39%; /* (1500 / 2015.2) * 100 for left 1500px elements */
+}
+
+#decksInShoe {
+  background-color:rgb(236, 233, 229);
+  height: 30px;
+  width: 80px;
+  
+  font-size: 20px;
+  padding: 1px; /* Padding inside each box */
+  border: 1px solid #221717; /* Border around each box */
+  
+  text-align: center;/* Center text within each box */
+  cursor: text; /* Change cursor to indicate editable */
+}
+#deckPen {
+  background-color:rgb(236, 233, 229);
+  height: 30px;
+  width: 80px;
+  
+  font-size: 20px;
+  padding: 1px; /* Padding inside each box */
+  border: 1px solid #221717; /* Border around each box */
+  
+  text-align: center;/* Center text within each box */
+  cursor: text; /* Change cursor to indicate editable */
+}
+#setBankroll {
+  background-color:rgb(236, 233, 229);
+  height: 30px;
+  width: 80px;
+  
+  font-size: 20px;
+  padding: 1px; /* Padding inside each box */
+  border: 1px solid #221717; /* Border around each box */
+  
+  text-align: center;/* Center text within each box */
+  cursor: text; /* Change cursor to indicate editable */
+}
+#speed {
+  background-color:rgb(236, 233, 229);
+  height: 30px;
+  width: 80px;
+  
+  font-size: 20px;
+  padding: 1px; /* Padding inside each box */
+  border: 1px solid #221717; /* Border around each box */
+  
+  text-align: center;/* Center text within each box */
+  cursor: text; /* Change cursor to indicate editable */
+}
+
+
+
+#decksInShoeText, #deckPenText, #speedText, #setBankrollText {
+  position: absolute;
+  left: 79.45%; /* (1600 / 2015.2) * 100 */
+  font-size: 20px;
+  white-space: nowrap;
+}
+
+#decksInShoeText {
+  top: 226.22%; /* (1940 / 859.2) * 100 */
+}
+
+#deckPenText {
+  top: 231.85%; /* (1990 / 859.2) * 100 */
+}
+
+#speedText {
+  top: 243.44%; /* (2090 / 859.2) * 100 */
+}
+
+#setBankrollText {
+  top: 237.57%; /* (2040 / 859.2) * 100 */
+}
+
+
+#stratText {
+  position: absolute;
+  left: 79.45%; /* (1600 / 2015.2) * 100 for left 1600px elements */
+}
+
+#betUpdate {
+  left: 84.37%; /* (1700 / 2015.2) * 100 */
+  top: 173%;
+}
+#betUpdate {
+  width: 3%;
+  cursor: pointer;
+}
+
+#explainDev {
+  left: 34.74%; /* (700 / 2015.2) * 100 */
+  top: 250%;
+}
+
+#bottomBorder, #infoText, #gitLink, #mail {
+  left: 0; /* Adjusted for full width or specific positioning */
+}
+
+#controlls {
+  left: 2.48%; /* (50 / 2015.2) * 100 */
+}
+
+#infoGuide {
+  left: 39.7%; /* (800 / 2015.2) * 100 */
+}
+
+#decksInShoe {
+  top: 227.22%; /* (1950 / 859.2) * 100 */
+}
+
+#deckPen {
+  top: 232.85%; /* (2000 / 859.2) * 100 */
+}
+
+#speed {
+  top: 244.44%; /* (2100 / 859.2) * 100 */
+}
+
+#setBankroll {
+  top: 238.57%; /* (2050 / 859.2) * 100 */
+}
+
+#stratContainer {
+  top: 256.11%; /* (2200 / 859.2) * 100 */
+}
+
+#stratText {
+  top: 250.26%; /* (2150 / 859.2) * 100 */
+}
+
+#bottomBorder {
+  top: 314.29%; /* (2700 / 859.2) * 100 */
+  left: 0%; /* Reset to align with the screen edge */
+}
+#bottomBorder {
+  position: absolute;
+  width: 100%;
+  height: 15%;
+
+  background-color: rgb(75, 91, 213);  
+}
+
+#infoText {
+  position: absolute;
+  top: 0%;
+  left: 5%;
+}
+
+#gitLink {
+  position: absolute;
+  top: 40%;
+  left: 5%;
+}
+
+#mail {
+  position: absolute;
+  top: 45%;
+  left: 5%;
+}
+
+#controlls {
+  top: 73.13%; /* (800 / 859.2) * 100 */
+}
+
+#infoGuide {
+  top: 117.24%; /* (1050 / 859.2) * 100 */
+}
+#stratContainer {
+  position: absolute;
+  left: 74.39%; /* (1500 / 2015.2) * 100 */
+  top: 256.11%; /* (2200 / 859.2) * 100 */
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-gap: 0px;
+  margin: auto; /* Centering might need review for responsiveness */
+  background-color: rgb(236, 233, 229);
+}
+
+.cellStrat {
+  height: 10px;
+  width: 20px;
+  padding: 8px 12px;
+  border: 1px solid #000000;
+  text-align: center;
+  cursor: text;
+}
+
+body {
+  background-color: rgb(108, 176, 199);
+}
