@@ -603,8 +603,6 @@ async function showHiddenCard(dealerHand) {
 function flipCard(card) {
   let theCard = document.getElementById(`${card.worldOrder}`)
   theCard.style.transform = "rotate(90deg)"
-  theCard.style.marginLeft = "2%"
-  theCard.style.marginBottom = "-4%"
 }
 
 function createButtons(Buttons) {
@@ -664,8 +662,8 @@ function startAnimation(targetX, targetY, time) {
   const rootStyle = document.documentElement.style;
   
   // Set CSS variables to target positions
-  rootStyle.setProperty('--move-to-x', targetX + '%');
-  rootStyle.setProperty('--move-to-y', targetY + '%');
+  rootStyle.setProperty('--move-to-x', targetX + 'px');
+  rootStyle.setProperty('--move-to-y', targetY + 'px');
 
   // Apply the animation
   entity.style.animation = `moveAndDisappear ${time}s`;
@@ -678,9 +676,9 @@ function moveCard(targetX, targetY, card) {
   const rootStyle = document.documentElement.style;
   
   // Set CSS variables to target positions
-  rootStyle.setProperty('--move-to-y', targetX + '%');
+  rootStyle.setProperty('--move-to-y', targetX + 'px');
 
-  rootStyle.setProperty('--move-to-y', targetY + '%');
+  rootStyle.setProperty('--move-to-y', targetY + 'px');
 
   // Apply the animation
   entity.style.animation = `cardMove 0.5s`;
