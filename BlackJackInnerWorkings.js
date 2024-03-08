@@ -79,7 +79,7 @@ class Shoe {
     document.getElementById("shoe").innerText = `Shoe: ${this.cards.length}/${this.amountDecks*52}`
     document.getElementById("runningCount").innerText = `Running Count: ${this.runningCount}`
     document.getElementById("trueCount").innerText = `True Count: ${this.trueCount.toFixed(2)}`
-    document.getElementById("bar").style.height = `${200-(200*(this.counter/(52*8)))}px`
+    document.getElementById("bar").style.height = `${20-(20*(this.counter/(52*8)))}%`
     return newCard
   }
 }
