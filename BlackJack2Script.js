@@ -365,6 +365,9 @@ function generalDeviations(hand, dealer, ans) {
                 sna = 'S'
               }
             }
+            if (sna === 'D' && hand.cards.length > 2) {
+              sna = 'H'
+            }
             
             if (ans != sna) {
               if ((!neg && count - margin <= countId) || (neg && count + margin >= countId)) {
@@ -407,6 +410,17 @@ function generalDeviations(hand, dealer, ans) {
           console.log(Ad0i)
 
           if (id[0] == handValue(hand.cards) && id[1] == dealer.cards[0].rank) {
+            if (sna === 's') {
+              if (hand.cards.length == 2) {
+                sna = 'D'
+              }
+              else {
+                sna = 'S'
+              }
+            }
+            if (sna === 'D' && hand.cards.length > 2) {
+              sna = 'H'
+            }
             res = true
             if (ans != sna) {
               if ((!neg && count - margin <= countId) || (neg && count + margin >= countId)) {
