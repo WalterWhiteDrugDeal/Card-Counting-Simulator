@@ -510,48 +510,49 @@ function seeker(key, hand) {
   let down = 0
   let left = 0
   if (key[0] === '0') {
-    left = 1100
-    down = 540
+    left = 100*1100/2015.2
+    down = 100*540/859.2
   }
   if (key[0] === '1') {
-    left = 800
-    down = 540
+    left = 100*800/2015.2
+    down = 100*540/859.2
+
   }
   if (key[0] === 'U') {
-    left = 950
-    down = 540
+    left = 100*950/2015.2
+    down = 100*540/859.2
   }
   for (let i = 0; i < hand.cards.length-1; i++) {
-    left += 30
-    down -= 40
+    left += 100*30/2015.2
+    down -= 100*40/859.2
   }
   for (let i = 0; i < key.length-1; i++) {
     let pair1 = key[i+1]
     let pair2 =key[i]
     let x = 1.2
     if (pair1 === '0' && pair2 === '0') {
-      left += 150 * x
-      down -= 60 
+      left += 100*150 * x/2015.2
+      down -= 100*60 /859.2
     }
     if (pair1 === '1' && pair2 === '0') {
-      left -= 50
-      down -= 60 
+      left -= 100*50/2015.2
+      down -= 100*60 /859.2
     }
     if (pair1 === '0' && pair2 === '1'  ) {
-      left += 50
-      down -= 60 
+      left += 100*50/2015.2
+      down -= 100*60 /859.2
     }
     if (pair1 === '1' && pair2 === '1' ) {
-      left -= 150 * x
-      down -= 60 
+      left -= 100*150 * x/2015.2
+      down -= 100*60 /859.2
     }
     if (pair2 === 'U' && pair1 === '0') {
-      left += 100
-      down -= 60 
+      left += 100*100/2015.2
+      down -= 100*60 /859.2
     }
     if (pair2 === 'U' && pair1 === '1') {
-      left -= 100
-      down -= 60
+      left -= 100*100/2015.2
+      down -= 100*60/859.2
     } 
     
     x = x*x
@@ -573,16 +574,16 @@ function cardMover(card, key) {
   let down = 0
   let left = 0
   if (key[0] === '0') {
-    left = 1100
-    down = 540
+    left = 100*1100/2015.2
+    down = 100*540/859.2
   }
   if (key[0] === '1') {
-    left = 800
-    down = 540
+    left = 100*800/2015.2
+    down = 100*540/859.2
   }
   if (key[0] === 'U') {
-    left = 950
-    down = 540
+    left = 100*950/2015.2
+    down =100* 540/859.2
   }
 
   for (let i = 0; i < key.length-1; i++) {
@@ -590,35 +591,35 @@ function cardMover(card, key) {
     let pair2 =key[i]
     let x = 1.2
     if (pair1 === '0' && pair2 === '0') {
-      left += 150 *x 
-      down -= 60 
+      left += 100*150 *x /2015.2
+      down -= 100*60 /859.2
     }
     if (pair1 === '1' && pair2 === '0') {
-      left -= 50
-      down -= 60 
+      left -= 100*50/2015.2
+      down -= 100*60 /859.2
     }
     if (pair1 === '0' && pair2 === '1') {
-      left += 50
-      down -= 60 
+      left += 100*50/2015.2
+      down -= 100*60 /859.2
     }
     if (pair1 === '1' && pair2 === '1') {
-      left -= 150 * x
-      down -= 60
+      left -= 100*150 * x/2015.2
+      down -= 100*60/859.2
     }
     if (pair2 === 'U' && pair1 === '0') {
-      left += 100
-      down -= 60
+      left += 100*100/2015.2
+      down -= 100*60/859.2
     }
     if (pair2 === 'U' && pair1 === '1') {
-      left -= 100
-      down -= 60
+      left -= 100*100/2015.2
+      down -= 100*60/859.2
     } 
     
     x = x*x
   }
 
-  sub.style.left =`${left}px`
-  sub.style.top = `${down}px`
+  sub.style.left =`${left}%`
+  sub.style.top = `${down}%`
   
 
 }
@@ -628,16 +629,16 @@ function handBetPlacer(hand) {
   let down = 0
   let left = 0
   if (key[0] === '0') {
-    left = 1100
-    down = 700
+    left = 100*1100/2015.2
+    down = 100*700/900.2
   }
   if (key[0] === '1') {
-    left = 800
-    down = 700
+    left = 100*800/2015.2
+    down = 100*700/900.2
   }
   if (key[0] === 'U') {
-    left = 950
-    down = 700
+    left = 100*950/2015.2
+    down = 100*700/900.2
   }
 
   for (let i = 0; i < key.length-1; i++) {
@@ -645,28 +646,28 @@ function handBetPlacer(hand) {
     let pair2 =key[i]
     let x = 1.2
     if (pair1 === '0' && pair2 === '0') {
-      left += 150 *x 
-      down -= 60 
+      left += 100*150 *x /2015.2
+      down -= 100*60 /900.2
     }
     if (pair1 === '1' && pair2 === '0') {
-      left -= 50
-      down -= 60 
+      left -= 100*50/2015.2
+      down -= 100*60/900.2
     }
     if (pair1 === '0' && pair2 === '1') {
-      left += 50
-      down -= 60 
+      left += 100*50/2015.2
+      down -= 100*60 /859.2
     }
     if (pair1 === '1' && pair2 === '1') {
-      left -= 150 * x
-      down -= 60
+      left -= 100*150 * x/2015.2
+      down -=100* 60/859.2
     }
     if (pair2 === 'U' && pair1 === '0') {
-      left += 100
-      down -= 60
+      left += 100*100/2015.2
+      down -= 100*60/900.2
     }
     if (pair2 === 'U' && pair1 === '1') {
-      left -= 100
-      down -= 60
+      left -= 100*100/2015.2
+      down -= 100*60/900.2
     } 
     
     x = x*x
@@ -686,10 +687,10 @@ function displayBets() {
     bet.style.transform = "translate(25%,25%)"
     bet.style.width = "6.5%"
     bet.style.color = "red"
-    bet.style.fontSize ="40px"
+    bet.style.fontSize ="250%"
     bet.style.fontWeight = "bold"
-    bet.style.left =`${place[0]}px`
-    bet.style.top = `${place[1]}px`
+    bet.style.left =`${place[0]}%`
+    bet.style.top = `${place[1]}%`
     bet.id = hand.placeId
     document.getElementById("bet-container").appendChild(bet);
 
