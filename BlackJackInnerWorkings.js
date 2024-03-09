@@ -145,7 +145,10 @@ class Hand {
 
     this.bet += bankroll.give(this.bet);
     this.addCard('dubble')
-    
+    if (this.score > 21) {
+      this.bet = 0
+      this.bust = true
+      
     this.score = handValue(this.cards)
     displayBets()
     HANDPOOL.goNext()
