@@ -604,7 +604,7 @@ function flipCard(card) {
   let theCard = document.getElementById(`${card.worldOrder}`)
   theCard.style.transform = "rotate(90deg)"
   let x = window.getComputedStyle(theCard).left
-  x = integerParse(x) + 10
+  x = parseFloat(x) + 10
   theCard.style.left = `${x}px`
 }
 
