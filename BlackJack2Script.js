@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => { //Load everything first
     HANDPOOL.HAND.hit()
   });
   document.addEventListener('keypress', (event) => {
-    if (event.key === 'A' || event.key === 'a') {
+    if (HANDPOOL.HAND && (event.key === 'A' || event.key === 'a')) {
       hitButton.click()
     }
   });
@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => { //Load everything first
     HANDPOOL.HAND.surrender()
   });
   document.addEventListener('keypress', (event) => {
-    if (event.key === 'U' || event.key === 'u') { 
+    if (HANDPOOL.HAND && (event.key === 'U' || event.key === 'u')) { 
       surrenderButton.click()
     }
   });
@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => { //Load everything first
     HANDPOOL.HAND.dubble()
     });
   document.addEventListener('keypress', (event) => {
-    if (event.key === 'D' ||  event.key === 'd') { 
+    if (HANDPOOL.HAND && (event.key === 'D' ||  event.key === 'd')) { 
       dubbleButton.click()
     }
   });
@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => { //Load everything first
     HANDPOOL.HAND.stand()
     });
   document.addEventListener('keypress', (event) => {
-    if (event.key === 'S' || event.key === 's') { 
+    if (HANDPOOL.HAND && (event.key === 'S' || event.key === 's')) { 
       standButton.click()
     }
   });
@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => { //Load everything first
     HANDPOOL.HAND.split()
     });
   document.addEventListener('keypress', (event) => {
-    if (event.key === 'W' || event.key === 'w') { 
+    if (HANDPOOL.HAND && (event.key === 'W' || event.key === 'w')) { 
       splitButton.click()
     }
   });
@@ -813,4 +813,78 @@ function generateGridsH() {
   return container
 }
 
+function storer() {
+  let list = ["0+","1+","2+","3+","4+","5+","6+","-0-","-1-","-2-"]
+  let list2 = ['2','3','4','5','6','7','8','9','10','A']
+  for (let i = 0; i<10; i++) {
+    for (let j = 0; j<10; j++) {
+      localStorage.setItem(`H${j}${i}`, document.getElementById(`H${j}${i}`).innerText)
+      if (i < 8) {
+        localStorage.setItem(`S${j}${i}`, document.getElementById(`S${j}${i}`).innerText)
+      }
+      localStorage.setItem(`P${j}${i}`, document.getElementById(`P${j}${i}`).innerText)
+      if (i < 3) {
+        localStorage.setItem(`U${j}${i}`, document.getElementById(`U${j}${i}`).innerText)
+      }
+    }
+    localStorage.setItem(`${list[i]}`, document.getElementById(`${list[i]}`).innerText)
+    localStorage.setItem(`${list2[i]}S`, document.getElementById(`${list2[i]}S`).innerText)
+  }
+
+  for (let k = 0; k<11; k++) {
+    localStorage.setItem(`B${k}`, document.getElementById(`B${k}`).innerText)
+    localStorage.setItem(`H${k}`, document.getElementById(`H${k}`).innerText)
+  }
+  localStorage.setItem('failMargin', document.getElementById('failMargin').innerText)
+
+}
+
+function keepStored() {
+  let list = ["0+","1+","2+","3+","4+","5+","6+","-0-","-1-","-2-"]
+  let list2 = ['2','3','4','5','6','7','8','9','10','A']
+  for (let i = 0; i<10; i++) {
+    for (let j = 0; j<10; j++) {
+      if (localStorage.getItem(`H${j}${i}`)) {
+        document.getElementById(`H${j}${i}`).innerText = localStorage.getItem(`H${j}${i}`)
+      }
+      if (i < 8 && localStorage.getItem(`S${j}${i}`)) {
+        document.getElementById(`S${j}${i}`).innerText = localStorage.getItem(`S${j}${i}`)
+      }
+      if (localStorage.getItem(`P${j}${i}`)) {
+        document.getElementById(`P${j}${i}`).innerText = localStorage.getItem(`P${j}${i}`)
+      }
+      if (i < 3 && localStorage.getItem(`U${j}${i}`)) {
+        document.getElementById(`U${j}${i}`).innerText = localStorage.getItem(`U${j}${i}`)
+      }
+      console.log(localStorage.getItem(`H${j}${i}`))
+    }
+    if (localStorage.getItem(`${list[i]}`)) {
+      document.getElementById(`${list[i]}`).innerText = localStorage.getItem(`${list[i]}`)
+    }
+    if (localStorage.getItem(`${list2[i]}S`)) {
+      document.getElementById(`${list2[i]}S`).innerText = localStorage.getItem(`${list2[i]}S`)
+    }
+  }
+  for (let k = 0; k<11; k++) {
+    if (localStorage.getItem(`B${k}`)) {
+      document.getElementById(`B${k}`).innerText = localStorage.getItem(`B${k}`)
+    } 
+    if (localStorage.getItem(`H${k}`)) {
+      document.getElementById(`H${k}`).innerText = localStorage.getItem(`H${k}`)
+    } 
+  }
+  if (localStorage.getItem('failMargin')) {
+    document.getElementById('failMargin').innerText = localStorage.getItem('failMargin')
+  }
+}
+
+keepStored()
+
+saveChanges.addEventListener('click', () => {
+  storer()
+})
+discardChanges.addEventListener('click', () => {
+  localStorage.clear()
+  
+})
 //shoe.cards = [new Card('Hearts', '10'),new Card('Hearts', '10'),new Card('Hearts', '10'),new Card('Hearts', '10'),new Card('Hearts', '10'),new Card('Hearts', '10'),new Card('Hearts', '10'),new Card('Hearts', '10'),new Card('Hearts', '10')]
