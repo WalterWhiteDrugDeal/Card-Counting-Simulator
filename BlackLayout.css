@@ -815,7 +815,20 @@
   left: 800px;
   white-space: nowrap;
 }
-
+#saveChanges {
+  position: absolute;
+  transform: translate(-50%,-50%);
+  left: 934.35px;
+  top: 1240px;
+  cursor: pointer;
+}
+#discardChanges {
+  position: absolute;
+  transform: translate(-50%,-50%);
+  left: 1096.83px;
+  top: 1240px;
+  cursor: pointer;
+}
 body {
   background-color: rgb(108, 176, 199);
 }
