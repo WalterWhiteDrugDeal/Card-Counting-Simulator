@@ -819,14 +819,14 @@
   position: absolute;
   transform: translate(-50%,-50%);
   left: 934.35px;
-  top: 1000px;
+  top: 1030px;
   cursor: pointer;
 }
 #discardChanges {
   position: absolute;
   transform: translate(-50%,-50%);
   left: 1096.83px;
-  top: 1000px;
+  top: 1030px;
   cursor: pointer;
 }
 body {
