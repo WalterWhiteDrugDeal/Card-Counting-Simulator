@@ -836,6 +836,11 @@ function storer() {
     localStorage.setItem(`H${k}`, document.getElementById(`H${k}`).innerText)
   }
   localStorage.setItem('failMargin', document.getElementById('failMargin').innerText)
+  
+  localStorage.setItem('decksInShoe', document.getElementById('decksInShoe').innerText)
+  localStorage.setItem('deckPen', document.getElementById('deckPen').innerText)
+  localStorage.setItem('speed', document.getElementById('speed').innerText)
+  localStorage.setItem('setBankroll', document.getElementById('setBankroll').innerText)
 
 }
 
@@ -875,6 +880,14 @@ function keepStored() {
   }
   if (localStorage.getItem('failMargin')) {
     document.getElementById('failMargin').innerText = localStorage.getItem('failMargin')
+  if (localStorage.getItem('decksInShoe')) {
+    document.getElementById('decksInShoe').innerText = localStorage.getItem('decksInShoe')
+  if (localStorage.getItem('deckPen')) {
+    document.getElementById('deckPen').innerText = localStorage.getItem('deckPen')
+  if (localStorage.getItem('speed')) {
+    document.getElementById('speed').innerText = localStorage.getItem('speed')
+  if (localStorage.getItem('setBankroll')) {
+    document.getElementById('setBankroll').innerText = localStorage.getItem('setBankroll')
   }
 }
 
