@@ -178,14 +178,14 @@ function basicStrategy(hand, dealer, ans) {
     }
     console.log(Scor, ans)
     if (Scor === 'Ds') {
-      if (hand.cards.length > 2) {
+      if (document.getElementById("dubbleButton").disabled) {
         Scor = 'S'
       }
       else if (hand.cards.length === 2) {
         Scor = 'D'
       }
     }
-    if (Scor === 'D' && hand.cards.length > 2) {
+    if (Scor === 'D' && document.getElementById("dubbleButton").disabled) {
       Scor = 'H'
     }
     if (Scor && ans != Scor) {
@@ -229,7 +229,15 @@ function basicStrategy(hand, dealer, ans) {
     Hcor = String(Hcor).trim()
   }
   console.log(Hcor, ans)
-  if (Hcor === 'D' && hand.cards.length > 2) {
+  if (Hcor === 's') {
+    if (document.getElementById("dubbleButton").disabled) {
+      Hcor = 'S'
+    }
+    else {
+      Hcor = 'D'
+    }
+  }
+  if (Hcor === 'D' && document.getElementById("dubbleButton").disabled) {
     Hcor = 'H'
   }
   if (Hcor && ans != Hcor) {
@@ -286,10 +294,6 @@ function generalDeviations(hand, dealer, ans) {
       neg = true
     }
     countId = parseFloat(list[i].slice(0,-1))
-    
-    
-    
-
     let Ad0i
     let sna
     let id
@@ -311,7 +315,6 @@ function generalDeviations(hand, dealer, ans) {
         
       }
     }
-    
     
     if ((!neg && count + margin >= countId) || (neg && count - margin <= countId)) {
       for (j in Ad0) {
@@ -358,14 +361,14 @@ function generalDeviations(hand, dealer, ans) {
           if (id[1] == handValue(hand.cards) -11 && id[2] == dealer.cards[0].rank) {
             res = true
             if (sna === 's') {
-              if (hand.cards.length == 2) {
-                sna = 'D'
-              }
-              else {
+              if (document.getElementById("dubbleButton").disabled) {
                 sna = 'S'
               }
+              else {
+                sna = 'D'
+              }
             }
-            if (sna === 'D' && hand.cards.length > 2) {
+            if (sna === 'D' && document.getElementById("dubbleButton").disabled) {
               sna = 'H'
             }
             
@@ -385,7 +388,7 @@ function generalDeviations(hand, dealer, ans) {
 
           }
         }
-        else if (Ad0i === 'U' && !checkS(hand) && hand.cards.length == 2 && (hand.placeId === '0' || hand.placeId === '1' || hand.placeId === 'U')) {
+        else if (!(hand.cards[0].getValue() == hand.cards[1].getValue()) && Ad0i === 'U' && !checkS(hand) && hand.cards.length == 2 && (hand.placeId === '0' || hand.placeId === '1' || hand.placeId === 'U')) {
           console.log(Ad0i)
 
           if (id[0] == handValue(hand.cards) && id[1] == dealer.cards[0].rank) {
@@ -411,14 +414,15 @@ function generalDeviations(hand, dealer, ans) {
           
           if (id[0] == handValue(hand.cards) && id[1] == dealer.cards[0].rank) {
             if (sna === 's') {
-              if (hand.cards.length == 2) {
-                sna = 'D'
-              }
-              else {
+              if (document.getElementById("dubbleButton").disabled) {
                 sna = 'S'
               }
+              else {
+                sna = 'D'
+              }
             }
-            if (sna === 'D' && hand.cards.length > 2) {
+            console.log(document.getElementById("dubbleButton").disabled)
+            if (sna === 'D' && document.getElementById("dubbleButton").disabled) {
               sna = 'H'
             }
             res = true
@@ -540,7 +544,7 @@ const container = document.getElementById('container'); // Get the container ele
 const dealerContainer = document.getElementById('dealer-container')
 
 async function newDisplayCard(card, place) {
-  startAnimation(place[0],place[1], 0.25)
+  startAnimation((place[0]),(place[1]), 0.25)
   //await sleep(500)
   let sort = card.rank + card.suit[0]
   if (sort[0] === '1') {
@@ -548,15 +552,16 @@ async function newDisplayCard(card, place) {
   }
   
   const theCard = document.createElement("img")
-  theCard.src = `${sort}.png`
+  theCard.src = `deckofcards-master\\deckofcards-master\\static\\img\\${sort}.png`
   //theCard.className = "card2"
   theCard.id = card.worldOrder
   theCard.style.position = "absolute"
   //theCard.style.display = "block"
   //theCard.style.boxShadow = "0 0 3px rgba(0,0,45)"
-  theCard.style.width = "131px"
-  theCard.style.left =`${place[0]}px`
-  theCard.style.top = `${place[1]}px`
+  theCard.style.transform = "translate(-50%,-50%)"
+  theCard.style.width = "6vw" 
+  theCard.style.left =`${place[0]+3}%`
+  theCard.style.top = `${place[1]-110}%`
   console.log(place)
   //theCard.style.marginTop = placeId[0]
   //theCard.style.marginLeft = placeId[1]
@@ -571,19 +576,19 @@ async function newDealerCard(card) {
   if (sort[0] === '1') {
     sort = sort.slice(1,3)
   }
-  startAnimation(1100, 200, 0.25)
+  startAnimation(50, 10, 0.25)
   //await sleep(500)
   const theCard = document.createElement("img")
-  theCard.src = `${sort}.png`
+  theCard.src = `deckofcards-master\\deckofcards-master\\static\\img\\${sort}.png`
   dealerContainer.appendChild(theCard)
 }
 
 async function hiddenCard() {
-  startAnimation(1100, 200, 0.25)
+  startAnimation(50, 10, 0.25)
   //await sleep(TIME/2)
   let hiddenCard = document.createElement("img")
   hiddenCard.id = "hiddenCard"
-  hiddenCard.src = "back.png"
+  hiddenCard.src = "deckofcards-master\\deckofcards-master\\static\\img\\back.png"
   dealerContainer.appendChild(hiddenCard)
 }
 
@@ -597,15 +602,15 @@ async function showHiddenCard(dealerHand) {
     sort = sort.slice(1,3)
   }
   
-  hiddenCard.src = `${sort}.png`
+  hiddenCard.src = `deckofcards-master\\deckofcards-master\\static\\img\\${sort}.png`
 }
 
 function flipCard(card) {
   let theCard = document.getElementById(`${card.worldOrder}`)
   theCard.style.transform = "rotate(90deg)"
-  let x = window.getComputedStyle(theCard).left
-  x = parseFloat(x) + 25
-  theCard.style.left = `${x}px`
+  theCard.style.marginTop= "-6%"
+  theCard.style.marginLeft= "-1%"
+
 }
 
 function createButtons(Buttons) {
@@ -617,9 +622,9 @@ function createButtons(Buttons) {
     button.innerText = `${Buttons[i]}`;
     
     button.style.backgroundColor = "lightgreen"
-    
-    
-    button.style.padding = "4px 8px"
+  
+    button.style.fontSize ="0.9vw"
+    button.style.padding = "0.2vw 0.4vw"
     button.id = `button${i}`; // Optional: Assign an ID to each button
 
     container.appendChild(button); // Append the button to the container
@@ -665,8 +670,8 @@ function startAnimation(targetX, targetY, time) {
   const rootStyle = document.documentElement.style;
   
   // Set CSS variables to target positions
-  rootStyle.setProperty('--move-to-x', targetX + 'px');
-  rootStyle.setProperty('--move-to-y', targetY + 'px');
+  rootStyle.setProperty('--move-to-x', targetX + '%');
+  rootStyle.setProperty('--move-to-y', targetY + '%');
 
   // Apply the animation
   entity.style.animation = `moveAndDisappear ${time}s`;
@@ -679,9 +684,9 @@ function moveCard(targetX, targetY, card) {
   const rootStyle = document.documentElement.style;
   
   // Set CSS variables to target positions
-  rootStyle.setProperty('--move-to-y', targetX + 'px');
+  rootStyle.setProperty('--move-to-y', targetX + '%');
 
-  rootStyle.setProperty('--move-to-y', targetY + 'px');
+  rootStyle.setProperty('--move-to-y', targetY + '%');
 
   // Apply the animation
   entity.style.animation = `cardMove 0.5s`;
@@ -692,12 +697,10 @@ let res = 0
 goButton.addEventListener('click', () => {
   if (!document.getElementById("check3").checked) {
     checkBetStrategy(activeBet)
-
   }
-  
   TIME = document.getElementById("speed").innerText
-  updateCash()
-  updateShoe()
+  
+  //updateShoe()
   document.getElementById("container").innerHTML = ''
   document.getElementById("dealer-container").innerHTML =''
   res = bankroll.cash
@@ -705,8 +708,13 @@ goButton.addEventListener('click', () => {
   runGame(douce, activeBet)
   document.getElementById("popup").style.display = "none"
   dealer.empty()
+  localStorage.setItem("Bank", bankroll.cash)
+
  
 })
+
+let DAS = true
+let S17 = true
 
 let deckPen = document.getElementById("deckPen").innerText
 
@@ -714,13 +722,12 @@ let amountDecks = document.getElementById("decksInShoe").innerText
 
 let money = document.getElementById("setBankroll").innerText
 
-function updateCash() {
-  if (money != document.getElementById("setBankroll").innerText) {
-    money = document.getElementById("setBankroll").innerText
-    bankroll.cash = money
-  }
+bankReset.addEventListener('click', () => {
+  bankroll.cash = money
+  localStorage.setItem('Bank', money)
+  document.getElementById("bankroll").innerText = `Bankroll: ${money}`
+})
 
-}
 
 function updateShoe() {
   console.log(deckPen)
@@ -813,6 +820,7 @@ function generateGridsH() {
   return container
 }
 
+
 function storer() {
   let list = ["0+","1+","2+","3+","4+","5+","6+","-0-","-1-","-2-"]
   let list2 = ['2','3','4','5','6','7','8','9','10','A']
@@ -836,13 +844,21 @@ function storer() {
     localStorage.setItem(`H${k}`, document.getElementById(`H${k}`).innerText)
   }
   localStorage.setItem('failMargin', document.getElementById('failMargin').innerText)
-  
+  localStorage.setItem('DASD', DAS)
+  localStorage.setItem('S17D', S17)
+
   localStorage.setItem('decksInShoe', document.getElementById('decksInShoe').innerText)
   localStorage.setItem('deckPen', document.getElementById('deckPen').innerText)
   localStorage.setItem('speed', document.getElementById('speed').innerText)
   localStorage.setItem('setBankroll', document.getElementById('setBankroll').innerText)
 
+  
 }
+
+
+
+
+
 
 function keepStored() {
   let list = ["0+","1+","2+","3+","4+","5+","6+","-0-","-1-","-2-"]
@@ -881,6 +897,25 @@ function keepStored() {
   if (localStorage.getItem('failMargin')) {
     document.getElementById('failMargin').innerText = localStorage.getItem('failMargin')
   }
+  if (localStorage.getItem('DASD') !== undefined) {
+    if (localStorage.getItem('DASD') == 'false') {
+      DAS = false
+    }
+
+    if (!DAS) {
+      console.log(DAS)
+      document.getElementById('buttonDAS').innerText = "DAS not allowed"
+    }
+  }
+
+  if (localStorage.getItem('S17D') !== undefined) {
+    if (localStorage.getItem('S17D') == 'false') {
+      S17 = false
+    }
+    if (!S17) {
+      document.getElementById("buttonS17").innerText = 'H17'
+    }
+  }
   if (localStorage.getItem('decksInShoe')) {
     document.getElementById('decksInShoe').innerText = localStorage.getItem('decksInShoe')
   }
@@ -893,9 +928,13 @@ function keepStored() {
   if (localStorage.getItem('setBankroll')) {
     document.getElementById('setBankroll').innerText = localStorage.getItem('setBankroll')
   }
+
+  
+
 }
 
 keepStored()
+
 
 saveChanges.addEventListener('click', () => {
   storer()
@@ -903,5 +942,35 @@ saveChanges.addEventListener('click', () => {
 discardChanges.addEventListener('click', () => {
   localStorage.clear()
   
+})
+
+
+
+
+
+buttonS17.addEventListener('click', () => {
+  
+  if (S17) {
+    document.getElementById("buttonS17").innerText = 'H17'
+    S17 = false
+  }
+  else {
+    document.getElementById("buttonS17").innerText = 'S17'
+    S17 = true
+  }
+  console.log(S17)
+})
+
+buttonDAS.addEventListener('click', () => {
+
+  if (DAS) {
+    document.getElementById("buttonDAS").innerText = 'DAS not allowed'
+    DAS = false
+  }
+  else {
+    document.getElementById("buttonDAS").innerText = 'DAS allowed'
+    DAS = true
+  }
+  console.log(DAS)
 })
 //shoe.cards = [new Card('Hearts', '10'),new Card('Hearts', '10'),new Card('Hearts', '10'),new Card('Hearts', '10'),new Card('Hearts', '10'),new Card('Hearts', '10'),new Card('Hearts', '10'),new Card('Hearts', '10'),new Card('Hearts', '10')]
