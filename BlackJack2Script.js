@@ -552,7 +552,7 @@ async function newDisplayCard(card, place) {
   }
   
   const theCard = document.createElement("img")
-  theCard.src = `deckofcards-master\\deckofcards-master\\static\\img\\${sort}.png`
+  theCard.src = `${sort}.png`
   //theCard.className = "card2"
   theCard.id = card.worldOrder
   theCard.style.position = "absolute"
@@ -579,7 +579,7 @@ async function newDealerCard(card) {
   startAnimation(50, 10, 0.25)
   //await sleep(500)
   const theCard = document.createElement("img")
-  theCard.src = `deckofcards-master\\deckofcards-master\\static\\img\\${sort}.png`
+  theCard.src = `${sort}.png`
   dealerContainer.appendChild(theCard)
 }
 
@@ -588,7 +588,7 @@ async function hiddenCard() {
   //await sleep(TIME/2)
   let hiddenCard = document.createElement("img")
   hiddenCard.id = "hiddenCard"
-  hiddenCard.src = "deckofcards-master\\deckofcards-master\\static\\img\\back.png"
+  hiddenCard.src = "back.png"
   dealerContainer.appendChild(hiddenCard)
 }
 
@@ -602,7 +602,7 @@ async function showHiddenCard(dealerHand) {
     sort = sort.slice(1,3)
   }
   
-  hiddenCard.src = `deckofcards-master\\deckofcards-master\\static\\img\\${sort}.png`
+  hiddenCard.src = `${sort}.png`
 }
 
 function flipCard(card) {
