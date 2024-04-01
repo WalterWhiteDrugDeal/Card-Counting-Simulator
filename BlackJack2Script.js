@@ -700,7 +700,7 @@ goButton.addEventListener('click', () => {
   }
   TIME = document.getElementById("speed").innerText
   
-  //updateShoe()
+  updateShoe()
   document.getElementById("container").innerHTML = ''
   document.getElementById("dealer-container").innerHTML =''
   res = bankroll.cash
