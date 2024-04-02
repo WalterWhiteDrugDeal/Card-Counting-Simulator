@@ -593,7 +593,7 @@ function cardPlacer(hand, card) {
   
   let key = hand.placeId
   
-  newDisplayCard(card, seeker(key, hand) )
+  newDisplayCard(card, seeker(key, hand), hand)
 }
 
 function cardMover(card, key) {

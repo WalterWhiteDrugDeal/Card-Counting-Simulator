@@ -21,7 +21,7 @@
   height: 6vw;
   border-radius: 50%;
   text-align: center;
-  font-size: 1.5vw;
+  font-size: 1.2vw;
   cursor: pointer;
   /*font-size: 1.2em;*/
 }
@@ -78,8 +78,8 @@
   left: 50%; /* (1015.6 / 2015.2) * 100 */
   width: 7vw;
   height: 1.8vw;
-  font-size: 1.2vw;
-  border-radius: 1em;
+  font-size: 1vw;
+  border-radius: 1vw;
   border: 1px solid #76c6aa;
   background-color: #4b96d8;
 }
@@ -267,11 +267,16 @@
 
 #infoGuide {
   position: absolute;
-  top: 110%;
+  top: 120%;
   transform: translate(-50%,-50%);
   left: 50%;
   font-size: 1vw;
 }
+
+
+
+
+
 
 
 
@@ -292,9 +297,9 @@
 
 @keyframes moveAndDisappear {
   0% {
-    top: 23.28%;
+    top: -303.28%;
     /* (200 / 859.2) * 100 */
-    left: 64.5%;
+    left: 74.5%;
     /* (1300 / 2015.2) * 100 */
     opacity: 1;
   }
@@ -325,7 +330,7 @@
 
 #titleContainer {
   position: absolute;
-  top:120%;
+  top:200%;
   
   width: 100%;
   height: 10vh;
@@ -352,7 +357,7 @@
   position: absolute;
   display: flex;
   left: 5%;
-  top: 130%;
+  top: 250%;
   height: 0%;
   max-width: 30%;
   flex-direction: column;
@@ -419,6 +424,7 @@
 
 #gridKey {
   padding-top: 3vw;
+  padding-bottom: 3vw;
   font-size: 1vw;
     
 }
@@ -427,8 +433,8 @@
 
 #deviationColumn {
   position: absolute;
-  left: 36%;
-  top: 140%;
+  left: 38%;
+  top: 280%;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -528,7 +534,7 @@
 .betSpreadContainer {
   position: absolute;
   left: 75%;
-  top: 140%;
+  top: 300%;
   display: flex;
   flex-direction: column;
   width: 8%;
@@ -716,36 +722,6 @@
 }
 
 
-#bottomBorder {
-  left:0%;
-  position: absolute;
-  width: 100%;
-  height: 15vh;
-  top: 350.29%;
-  background-color: rgb(94, 103, 170);
-  
-}
-
-#infoText {
-  position: relative;
-  top: 0%;
-  left: 5%;
-  font-size: 0.9vw;
-}
-
-#gitLink {
-  position: relative;
-  top: 10%;
-  left: 5%;
-  font-size: 0.9vw;
-}
-
-#mail {
-  position: relative;
-  left: 5%;
-  top: 0%;
-  font-size: 0.9vw;
-}
 
 
 
@@ -754,7 +730,7 @@
   position: absolute;
   transform: translate(-50%,-50%);
   left: 45%;
-  top: 123%;
+  top: 183%;
   cursor: pointer;
   font-size: 0.65vw;
   width: 5.5vw;
@@ -764,7 +740,7 @@
   position: absolute;
   transform: translate(-50%,-50%);
   left: 55%;
-  top: 123%;
+  top: 183%;
   cursor: pointer;
   font-size: 0.65vw;
   width: 5.5vw;
@@ -780,7 +756,7 @@
   background-color:rgb(174, 59, 192);
   cursor: pointer;
   left: 47%;
-  top: 117%;
+  top: 157%;
 }
 #buttonDAS {
   position: absolute;
@@ -789,7 +765,7 @@
   height: 2vw;
   width: 5vw;
   left: 53%;
-  top: 117%;
+  top: 157%;
   cursor: pointer;
 
   font-size: 0.8vw;

@@ -543,16 +543,18 @@ function checkBetStrategy(ans) {
 const container = document.getElementById('container'); // Get the container element
 const dealerContainer = document.getElementById('dealer-container')
 
-async function newDisplayCard(card, place) {
-  startAnimation((place[0]),(place[1]), 0.25)
+async function newDisplayCard(card, place, hand) {
   //await sleep(500)
+
   let sort = card.rank + card.suit[0]
   if (sort[0] === '1') {
     sort = sort.slice(1,3)
   }
+  startAnimation((place[0]),(place[1]), TIME/2000, hand)
   
   const theCard = document.createElement("img")
-  theCard.src = `${sort}.png`
+
+  theCard.src = `deckofcards-master\\deckofcards-master\\static\\img\\${sort}.png`
   //theCard.className = "card2"
   theCard.id = card.worldOrder
   theCard.style.position = "absolute"
@@ -562,10 +564,10 @@ async function newDisplayCard(card, place) {
   theCard.style.width = "6vw" 
   theCard.style.left =`${place[0]+3}%`
   theCard.style.top = `${place[1]-110}%`
-  console.log(place)
+
   //theCard.style.marginTop = placeId[0]
   //theCard.style.marginLeft = placeId[1]
-  
+
   container.appendChild(theCard);
   
  
@@ -576,19 +578,19 @@ async function newDealerCard(card) {
   if (sort[0] === '1') {
     sort = sort.slice(1,3)
   }
-  startAnimation(50, 10, 0.25)
+  startAnimation(50, -350, TIME/2000)
   //await sleep(500)
   const theCard = document.createElement("img")
-  theCard.src = `${sort}.png`
+  theCard.src = `deckofcards-master\\deckofcards-master\\static\\img\\${sort}.png`
   dealerContainer.appendChild(theCard)
 }
 
 async function hiddenCard() {
-  startAnimation(50, 10, 0.25)
+  startAnimation(50, -350, TIME/2000)
   //await sleep(TIME/2)
   let hiddenCard = document.createElement("img")
   hiddenCard.id = "hiddenCard"
-  hiddenCard.src = "back.png"
+  hiddenCard.src = "deckofcards-master\\deckofcards-master\\static\\img\\back.png"
   dealerContainer.appendChild(hiddenCard)
 }
 
@@ -602,7 +604,7 @@ async function showHiddenCard(dealerHand) {
     sort = sort.slice(1,3)
   }
   
-  hiddenCard.src = `${sort}.png`
+  hiddenCard.src = `deckofcards-master\\deckofcards-master\\static\\img\\${sort}.png`
 }
 
 function flipCard(card) {
@@ -663,15 +665,22 @@ selectButton.addEventListener('click', () => {
 let activeBet = 500
 let douce = true
 
-function startAnimation(targetX, targetY, time) {
+function startAnimation(targetX, targetY, time, hand) {
   const entity = document.getElementById('movingEntity');
   entity.style.animation = "none"
   void entity.offsetWidth;
   const rootStyle = document.documentElement.style;
-  
   // Set CSS variables to target positions
-  rootStyle.setProperty('--move-to-x', targetX + '%');
-  rootStyle.setProperty('--move-to-y', targetY + '%');
+  
+  if (hand) {
+    rootStyle.setProperty('--move-to-x', (3+targetX) + '%');
+    rootStyle.setProperty('--move-to-y', (targetY-150) + '%')
+    console.log(targetY*(3.2**(hand.placeId.length-1)))
+  }
+  else {
+    rootStyle.setProperty('--move-to-x', targetX + '%');
+    rootStyle.setProperty('--move-to-y', targetY + '%');
+  }
 
   // Apply the animation
   entity.style.animation = `moveAndDisappear ${time}s`;
@@ -700,7 +709,7 @@ goButton.addEventListener('click', () => {
   }
   TIME = document.getElementById("speed").innerText
   
-  updateShoe()
+  //updateShoe()
   document.getElementById("container").innerHTML = ''
   document.getElementById("dealer-container").innerHTML =''
   res = bankroll.cash
