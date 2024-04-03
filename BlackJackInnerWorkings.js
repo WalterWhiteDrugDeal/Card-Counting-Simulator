@@ -169,7 +169,7 @@ class Hand {
     await sleep(TIME)
     this.addCard()
     await sleep(TIME)
-    newHand.addCard()
+    //newHand.addCard()
     if (this.cards[0].getValue() === this.cards[1].getValue()) {
       document.getElementById("splitButton").removeAttribute("disabled")
     }
@@ -292,6 +292,10 @@ class HandPool {
   async goNext() {
     this.handIndex += 1
     this.activateHand()
+    if (this.HAND && this.HAND.cards.length == 1) {
+      await sleep(TIME)
+      this.HAND.addCard()
+    }
     document.getElementById("dubbleButton").removeAttribute("disabled")
     if (!this.HAND) {
       document.getElementById("surrenderButton").removeAttribute("disabled")
