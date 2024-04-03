@@ -69,8 +69,6 @@ class Shoe {
       this.stack = plus
     }
     else {
-      plus += this.stack
-      this.stack = 0
       this.runningCount += plus
     }
 
