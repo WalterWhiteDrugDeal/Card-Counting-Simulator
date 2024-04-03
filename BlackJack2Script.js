@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => { //Load everything first
   
   hitButton.addEventListener('click', () => {
-    alertCenter(HANDPOOL.HAND, dealer, 'H')
+    alertCenter(HANDPOOL.HAND, dealer, 'H')    
     HANDPOOL.HAND.hit()
   });
   document.addEventListener('keypress', (event) => {
@@ -599,6 +599,13 @@ async function showHiddenCard(dealerHand) {
   let hiddenCard = document.getElementById("hiddenCard")
   let card = dealerHand[1]
   let sort = card.rank + card.suit[0]
+
+  shoe.runningCount += shoe.stack
+  shoe.stack = 0
+  shoe.trueCount = shoe.runningCount/(shoe.cards.length/52)
+
+  document.getElementById("runningCount").innerText = `Running Count: ${shoe.runningCount}`
+  document.getElementById("trueCount").innerText = `True Count: ${shoe.trueCount.toFixed(2)}`
   
   if (sort[0] === '1') {
     sort = sort.slice(1,3)
